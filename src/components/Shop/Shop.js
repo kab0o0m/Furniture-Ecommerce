@@ -5,7 +5,7 @@ import IMAGES from "../../Images";
 const Shop = () => {
   const [selectedOption, setSelectedOption] = useState("Alphabetically, A-Z");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
+  const itemsPerPage = 6;
   const totalPages = Math.ceil(IMAGES.length / itemsPerPage);
   const options = [
     "Featured",
@@ -88,7 +88,18 @@ const Shop = () => {
 
       {/* Page selection */}
       <div className="pages">
-        <button>1</button>
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index + 1}
+            onClick={() => {
+              setCurrentPage(index + 1);
+              window.scrollTo({ top: 0, behavior: "smooth" }); // Scrolls to the top of the page
+            }}
+            className="pages-button"
+          >
+            {index + 1}
+          </button>
+        ))}
       </div>
     </div>
   );
