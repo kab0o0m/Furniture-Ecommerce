@@ -88,7 +88,7 @@ const Shop = () => {
 
       {/* Page selection */}
       <div className="pages">
-        <button>1</button>
+        <button></button>
       </div>
     </div>
   );
