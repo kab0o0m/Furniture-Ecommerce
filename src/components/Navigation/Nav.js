@@ -39,10 +39,13 @@ function Nav() {
           <a href="/blog">Blog</a>
         </li>
         <li>
+          <a href="/wishlist">Wishlist</a>
+        </li>
+        <li>
           <a href="/about">About Us</a>
         </li>
         <li>
-          <a href="/contact">Contact</a>
+          <a href="/contact">Contact Us</a>
         </li>
       </ul>
       <div>

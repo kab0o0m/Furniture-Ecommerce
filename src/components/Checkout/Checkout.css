@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .checkout-header{
@@ -25,3 +24,39 @@
 .checkout-header-page p{
   opacity: 0.5;
 }
+
+.checkout-display,
+.checkout-display-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70rem;
+  padding: 2rem;
+}
+
+.checkout-display-body {
+  margin: 0 0 2rem 0;
+}
+
+.checkout-display-img,
+.checkout-display-title,
+.checkout-display-price,
+.checkout-display-quantity,
+.checkout-display-total
+ {
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.checkout-display-body button{
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
