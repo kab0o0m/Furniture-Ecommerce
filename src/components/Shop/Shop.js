@@ -3,7 +3,7 @@ import "./Shop.css";
 import IMAGES from "../../Images";
 
 const Shop = () => {
-  const [selectedOption, setSelectedOption] = useState("Alphabetically, A-Z");
+  const [selectedOption, setSelectedOption] = useState("Select an option");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   const totalPages = Math.ceil(IMAGES.length / itemsPerPage);

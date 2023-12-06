@@ -1,7 +1,9 @@
 import "./Homepage.css";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import Wishlist from "../../Wishlist";
 import IMAGES from "../../Images.js";
+import { useState } from "react";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -12,6 +14,31 @@ const Homepage = () => {
   const shopNow = () => {
     navigate("/shop");
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const [wishlistItems, setWishlistItems] = useState([]);
+  const addToWishlist = (item) => {
+    setWishlistItems((wishlistItems) => {
+      let updatedWishlistItems = [...wishlistItems];
+
+      const isThere = updatedWishlistItems.find(
+        (wishlistItem) => wishlistItem.id === item.id
+      );
+
+      if (!isThere) {
+        updatedWishlistItems.push(item);
+      } else {
+        updatedWishlistItems = updatedWishlistItems.filter(
+          (wishlistItem) => wishlistItem.id !== item.id
+        );
+      }
+      console.log(updatedWishlistItems);
+      return updatedWishlistItems;
+    });
+  };
+
+  const isInWishlist = (item) => {
+    return wishlistItems.find((wishlistItem) => wishlistItem.id === item.id);
   };
 
   return (
@@ -71,50 +98,42 @@ const Homepage = () => {
           When it comes to furnitures, choices are galore on Furnir
         </p>
         <div className="new-arrivals-display">
-          {IMAGES &&
-            IMAGES.filter((item) => item.id >= 1 && item.id <= 8).map(
-              (item) => {
-                return (
-                  <div key={item.id} className="card">
-                    <div>
-                      <img src={item.image} className="card-img" />
-                    </div>
-                    <p className="card-info-1">{item.description}</p>
-                    <p className="card-info-2">{item.price}</p>
-                    <div className="card-icons">
-                      <div className="card-icons-1">
-                        <i class="fa-sharp fa-regular fa-heart"></i>
-                      </div>
-                      <div className="card-icons-2">
-                        <i class="fa-regular fa-eye"></i>
-                      </div>
-                      <div className="card-icons-3">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                      </div>
-                    </div>
+          {IMAGES.filter((item) => item.id >= 1 && item.id <= 8).map((item) => {
+            return (
+              <div key={item.id} className="card">
+                <div>
+                  <img src={item.image} className="card-img" />
+                </div>
+                <p className="card-info-1">{item.description}</p>
+                <p className="card-info-2">{item.price}</p>
+                <div className="card-icons">
+                  <div className="card-icons-1">
+                    <button
+                      className="wishlist"
+                      onClick={() => addToWishlist(item)}
+                    >
+                      <i
+                        style={{ color: isInWishlist(item) ? "red" : "black" }}
+                        class={`fa ${
+                          isInWishlist(item) ? "fas" : "far"
+                        } fa-heart`}
+                      ></i>
+                    </button>
                   </div>
-                );
-              }
-            )}
-
-          {/*<div className="card">
-            <div className="card-img card-img-1">
-              <img src="" alt="" />
-            </div>
-            <p className="card-info-1">Dining Cushion Chair</p>
-            <p className="card-info-2">SGD 69.00</p>
-            <div className="card-icons">
-              <div className="card-icons-1">
-                <i class="fa-sharp fa-regular fa-heart"></i>
+                  <div className="card-icons-2">
+                    <button className="preview">
+                      <i class="fa-regular fa-eye"></i>
+                    </button>
+                  </div>
+                  <div className="card-icons-3">
+                    <button className="add-to-cart">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div className="card-icons-2">
-                <i class="fa-regular fa-eye"></i>
-              </div>
-              <div className="card-icons-3">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </div>
-        </div>*/}
+            );
+          })}
         </div>
       </div>
 
