@@ -3,6 +3,7 @@ const WISHLIST_KEY = "wishlist";
 let wishlist = JSON.parse(localStorage.getItem(WISHLIST_KEY)) || [];
 
 const getWishlist = () => {
+  console.log(wishlist);
   return wishlist;
 };
 

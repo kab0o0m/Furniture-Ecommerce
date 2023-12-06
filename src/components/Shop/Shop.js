@@ -12,6 +12,18 @@ const Shop = () => {
   const [currentLayout, setCurrentLayout] = useState("shop-display-grid");
   const [currentCardLayout, setCurrentCardLayout] = useState("card-column");
   const [imageSize, setImageSize] = useState("card-img-large");
+  const [isWishlistPopup, setIsWishlistPopup] = useState(false);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = currentPage * itemsPerPage;
+  const filteredItems = IMAGES.slice(startIndex, endIndex);
+
+  const WishlistPopup = () => {
+    setIsWishlistPopup(true);
+
+    setTimeout(() => {
+      setIsWishlistPopup(false);
+    }, 3000);
+  };
   const options = [
     "Featured",
     "Best Selling",
@@ -36,10 +48,6 @@ const Shop = () => {
     setImageSize("card-img-large");
   };
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = currentPage * itemsPerPage;
-  const filteredItems = IMAGES.slice(startIndex, endIndex);
-
   const addToWishlist = (item) => {
     setWishlistItems((wishlistItems) => {
       let updatedWishlistItems = [...wishlistItems];
@@ -50,6 +58,7 @@ const Shop = () => {
 
       if (!isThere) {
         updatedWishlistItems.push(item);
+        WishlistPopup();
       } else {
         updatedWishlistItems = updatedWishlistItems.filter(
           (wishlistItem) => wishlistItem.id !== item.id
@@ -144,6 +153,15 @@ const Shop = () => {
           );
         })}
       </div>
+      {/* Popups */}
+      {isWishlistPopup && (
+        <div className="popup">
+          <p>Item added to Wishlist</p>
+          <button onClick={() => setIsWishlistPopup(false)}>
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      )}
 
       {/* Page selection */}
       <div className="pages">

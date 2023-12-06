@@ -96,7 +96,7 @@ const Homepage = () => {
       <div className="new-arrivals">
         <p className="new-arrivals-title">New Arrivals</p>
         <p className="new-arrivals-description">
-          When it comes to furnitures, choices are galore on Furnir
+          When it comes to furnitures, choices are galore on Furvo
         </p>
         <div className="new-arrivals-display">
           {IMAGES.filter((item) => item.id >= 1 && item.id <= 8).map((item) => {

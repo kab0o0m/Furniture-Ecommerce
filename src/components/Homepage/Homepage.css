@@ -118,7 +118,9 @@
   overflow: hidden;
 }
 
-.card-icons .wishlist{
+.homepage .wishlist,
+.homepage .preview,
+.homepage .add-to-cart{
   width: 100%;
   height: 100%;
   background-color: #FFFFFF;
@@ -227,5 +229,9 @@
   transition: 0.3s;
 }
 
+.popup {
+  display: flex;
+  justify-content: space-between;
+}
 
 
