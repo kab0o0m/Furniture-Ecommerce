@@ -2,20 +2,64 @@ import { useState } from "react";
 import "./Shop.css";
 import IMAGES from "../../Images";
 import { getWishlist, setWishlist } from "../../Wishlist";
+import { getCheckoutList, setCheckoutList } from "../../CheckoutList";
 
 const Shop = () => {
   const [selectedOption, setSelectedOption] = useState("Select an option");
   const [currentPage, setCurrentPage] = useState(1);
   const [wishlistItems, setWishlistItems] = useState(getWishlist);
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(IMAGES.length / itemsPerPage);
   const [currentLayout, setCurrentLayout] = useState("shop-display-grid");
   const [currentCardLayout, setCurrentCardLayout] = useState("card-column");
   const [imageSize, setImageSize] = useState("card-img-large");
   const [isWishlistPopup, setIsWishlistPopup] = useState(false);
+  const [checkoutItems, setCheckoutItems] = useState(getCheckoutList);
+  const [cartCount, setCartCount] = useState(checkoutItems.length);
+  const [isAddToCartPopup, setIsAddToCartPopup] = useState(false);
+
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(IMAGES.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = currentPage * itemsPerPage;
   const filteredItems = IMAGES.slice(startIndex, endIndex);
+
+  const addToCartPopup = () => {
+    setIsAddToCartPopup(true);
+
+    const timeoutID = setTimeout(() => {
+      setIsAddToCartPopup(false);
+    }, 3000);
+  };
+  const addToShoppingCart = (item) => {
+    setCheckoutItems((checkoutItems) => {
+      let updatedCheckoutList = [...checkoutItems];
+
+      const existingItem = updatedCheckoutList.find(
+        (checkoutItem) => checkoutItem.id === item.id
+      );
+
+      if (existingItem) {
+        // Item already in the cart, update its quantity
+        existingItem.quantity += 1;
+        addToCartPopup();
+      } else {
+        // Item not in the cart, add it with quantity 1
+        const newItem = { ...item, quantity: 1 };
+        updatedCheckoutList.push(newItem);
+      }
+      // Update the cart count based on the total number of items in the cart
+      const totalItemsInCart = updatedCheckoutList.reduce(
+        (total, item) => total + item.quantity,
+        0
+      );
+
+      setCartCount(totalItemsInCart);
+      setCheckoutList(updatedCheckoutList);
+
+      console.log(updatedCheckoutList);
+      console.log("Checkout count: " + cartCount);
+      return updatedCheckoutList;
+    });
+  };
 
   const WishlistPopup = () => {
     setIsWishlistPopup(true);
@@ -24,6 +68,25 @@ const Shop = () => {
       setIsWishlistPopup(false);
     }, 3000);
   };
+
+  const eyePopup = (item) => {
+    return (
+      <div className="checkout-popup">
+        <div className="checkout-popup-img">
+          <img src={item.image} alt="" />
+        </div>
+        <div className="checkout-popup-right">
+          <div className="popup-title">{item.title}</div>
+          <div className="popup-description">{item.description}</div>
+          <div className="popup-quantity">{item.quantity}</div>
+          <div className="checkout-add-button">
+            <button className="add-button">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const options = [
     "Featured",
     "Best Selling",
@@ -144,7 +207,10 @@ const Shop = () => {
                   </button>
                 </div>
                 <div className="card-icons-3">
-                  <button className="add-to-cart">
+                  <button
+                    className="add-to-cart"
+                    onClick={() => addToShoppingCart(item)}
+                  >
                     <i className="fa-solid fa-cart-shopping"></i>
                   </button>
                 </div>
@@ -154,11 +220,24 @@ const Shop = () => {
         })}
       </div>
 
-      {/* Popups */}
+      {/* Popups*/}
+      {/* Wishlist Popup for left button*/}
       {isWishlistPopup && (
         <div className="popup">
           <p>Item added to Wishlist</p>
           <button onClick={() => setIsWishlistPopup(false)}>
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      )}
+
+      {/* Checkout Popup for middle button */}
+
+      {/* Add to Cart Popup for right button*/}
+      {isAddToCartPopup && (
+        <div className="checkout-popup">
+          <p>Item added to Cart</p>
+          <button onClick={() => setIsAddToCartPopup(false)}>
             <i className="fa-solid fa-xmark"></i>
           </button>
         </div>

@@ -1,4 +1,5 @@
 import "./Checkout.css";
+import { getCheckoutList, setCheckoutList } from "../../CheckoutList";
 
 const Checkout = () => {
   return (
@@ -10,6 +11,8 @@ const Checkout = () => {
         <div className="shop-header-page">
           <p>Checkout</p>
         </div>
+
+        {/* Display cart */}
       </div>
     </div>
   );

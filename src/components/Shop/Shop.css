@@ -178,7 +178,8 @@
   color: #FFFFFF;
 }
 
-.popup {
+.popup,
+.checkout-popup{
   display: flex;
   justify-content: space-between;
   background-color: hsl(218, 3%, 55%);
@@ -189,11 +190,13 @@
   animation-iteration-count: initial;
 }
 
-.popup p{
+.popup p,
+.checkout-popup p{
   padding: 1rem;
 }
 
-.popup button {
+.popup button,
+.checkout-popup button {
   background-color: #888B90;
   border: none;
   padding: 1rem 1rem 1rem 0;
