@@ -36,14 +36,14 @@ function Nav() {
       </ul>
       <div>
         <button className="search-icon">
-          <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+          <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
         </button>
         <button className="settings-icon">
-          <i class="fa-solid fa-gear"></i>
+          <i className="fa-solid fa-gear"></i>
         </button>
 
         <button className="shopping-cart-icon">
-          <i class="fa-solid fa-cart-shopping"></i>
+          <i className="fa-solid fa-cart-shopping"></i>
         </button>
 
         <button

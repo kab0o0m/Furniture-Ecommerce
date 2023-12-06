@@ -16,19 +16,19 @@ const Footer = () => {
         </p>
         <div className="footer-icons">
           <a href="/">
-            <i class="fa-brands fa-facebook"></i>
+            <i className="fa-brands fa-facebook"></i>
           </a>
           <a href="/">
-            <i class="fa-brands fa-twitter"></i>
+            <i className="fa-brands fa-twitter"></i>
           </a>
           <a href="/">
-            <i class="fa-brands fa-google"></i>
+            <i className="fa-brands fa-google"></i>
           </a>
           <a href="/">
-            <i class="fa-brands fa-linkedin-in"></i>
+            <i className="fa-brands fa-linkedin-in"></i>
           </a>
           <a href="/">
-            <i class="fa-brands fa-square-instagram"></i>
+            <i className="fa-brands fa-square-instagram"></i>
           </a>
         </div>
       </div>

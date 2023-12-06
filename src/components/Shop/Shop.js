@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./Shop.css";
 import IMAGES from "../../Images";
+import { getWishlist, setWishlist } from "../../Wishlist";
 
 const Shop = () => {
   const [selectedOption, setSelectedOption] = useState("Select an option");
   const [currentPage, setCurrentPage] = useState(1);
+  const [wishlistItems, setWishlistItems] = useState(getWishlist);
   const itemsPerPage = 6;
   const totalPages = Math.ceil(IMAGES.length / itemsPerPage);
   const [currentLayout, setCurrentLayout] = useState("shop-display-grid");
@@ -38,6 +40,31 @@ const Shop = () => {
   const endIndex = currentPage * itemsPerPage;
   const filteredItems = IMAGES.slice(startIndex, endIndex);
 
+  const addToWishlist = (item) => {
+    setWishlistItems((wishlistItems) => {
+      let updatedWishlistItems = [...wishlistItems];
+
+      const isThere = updatedWishlistItems.find(
+        (wishlistItem) => wishlistItem.id === item.id
+      );
+
+      if (!isThere) {
+        updatedWishlistItems.push(item);
+      } else {
+        updatedWishlistItems = updatedWishlistItems.filter(
+          (wishlistItem) => wishlistItem.id !== item.id
+        );
+      }
+      setWishlist(updatedWishlistItems);
+      console.log(updatedWishlistItems);
+      return updatedWishlistItems;
+    });
+  };
+
+  const isInWishlist = (item) => {
+    return wishlistItems.find((wishlistItem) => wishlistItem.id === item.id);
+  };
+
   return (
     <div className="shop">
       {/* Header */}
@@ -54,12 +81,12 @@ const Shop = () => {
         <div className="icons">
           <div className="icon1">
             <button onClick={displayGrid}>
-              <i class="fa fa-th"></i>
+              <i className="fa fa-th"></i>
             </button>
           </div>
           <div className="icon2">
             <button onClick={displayFlex}>
-              <i class="fa fa-list"></i>
+              <i className="fa fa-list"></i>
             </button>
           </div>
         </div>
@@ -90,13 +117,27 @@ const Shop = () => {
               <p className="card-info-2">{item.price}</p>
               <div className="card-icons">
                 <div className="card-icons-1">
-                  <i class="fa-sharp fa-regular fa-heart"></i>
+                  <button
+                    className="wishlist"
+                    onClick={() => addToWishlist(item)}
+                  >
+                    <i
+                      style={{ color: isInWishlist(item) ? "red" : "black" }}
+                      className={`fa ${
+                        isInWishlist(item) ? "fas" : "far"
+                      } fa-heart`}
+                    ></i>
+                  </button>
                 </div>
                 <div className="card-icons-2">
-                  <i class="fa-regular fa-eye"></i>
+                  <button className="preview">
+                    <i className="fa-regular fa-eye"></i>
+                  </button>
                 </div>
                 <div className="card-icons-3">
-                  <i class="fa-solid fa-cart-shopping"></i>
+                  <button className="add-to-cart">
+                    <i className="fa-solid fa-cart-shopping"></i>
+                  </button>
                 </div>
               </div>
             </div>

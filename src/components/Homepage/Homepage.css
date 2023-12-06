@@ -126,10 +126,6 @@
   cursor: pointer;
 }
 
-.red-heart {
-  background-color: red;
-}
-
 .best-sale {
   background-image: url(../../../public/Images/Homepage-2.webp);
   background-repeat: no-repeat;

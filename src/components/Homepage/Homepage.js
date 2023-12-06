@@ -1,9 +1,9 @@
 import "./Homepage.css";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import Wishlist from "../../Wishlist";
 import IMAGES from "../../Images.js";
 import { useState } from "react";
+import { getWishlist, setWishlist } from "../../Wishlist";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Homepage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const [wishlistItems, setWishlistItems] = useState([]);
+  const [wishlistItems, setWishlistItems] = useState(getWishlist);
   const addToWishlist = (item) => {
     setWishlistItems((wishlistItems) => {
       let updatedWishlistItems = [...wishlistItems];
@@ -32,6 +32,7 @@ const Homepage = () => {
           (wishlistItem) => wishlistItem.id !== item.id
         );
       }
+      setWishlist(updatedWishlistItems);
       console.log(updatedWishlistItems);
       return updatedWishlistItems;
     });
@@ -114,7 +115,7 @@ const Homepage = () => {
                     >
                       <i
                         style={{ color: isInWishlist(item) ? "red" : "black" }}
-                        class={`fa ${
+                        className={`fa ${
                           isInWishlist(item) ? "fas" : "far"
                         } fa-heart`}
                       ></i>
@@ -122,12 +123,12 @@ const Homepage = () => {
                   </div>
                   <div className="card-icons-2">
                     <button className="preview">
-                      <i class="fa-regular fa-eye"></i>
+                      <i className="fa-regular fa-eye"></i>
                     </button>
                   </div>
                   <div className="card-icons-3">
                     <button className="add-to-cart">
-                      <i class="fa-solid fa-cart-shopping"></i>
+                      <i className="fa-solid fa-cart-shopping"></i>
                     </button>
                   </div>
                 </div>
