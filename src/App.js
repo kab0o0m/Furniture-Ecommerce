@@ -6,6 +6,8 @@ import Blog from "./components/Blog/Blog";
 import AboutUs from "./components/About Us/AboutUs";
 import ContactUs from "./components/Contact Us/ContactUs";
 import Footer from "./components/Footer/Footer";
+import Wishlist from "./components/Wishlist/Wishlist";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </div>
       <Footer />

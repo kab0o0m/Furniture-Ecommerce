@@ -20,7 +20,7 @@ const Shop = () => {
   const WishlistPopup = () => {
     setIsWishlistPopup(true);
 
-    setTimeout(() => {
+    const timeoutID = setTimeout(() => {
       setIsWishlistPopup(false);
     }, 3000);
   };
@@ -153,6 +153,7 @@ const Shop = () => {
           );
         })}
       </div>
+
       {/* Popups */}
       {isWishlistPopup && (
         <div className="popup">

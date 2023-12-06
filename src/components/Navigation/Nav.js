@@ -1,12 +1,23 @@
 import "./Nav.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const windowScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const checkOut = () => {
+    navigate("/checkout");
+    windowScrollToTop();
   };
 
   return (
@@ -42,7 +53,7 @@ function Nav() {
           <i className="fa-solid fa-gear"></i>
         </button>
 
-        <button className="shopping-cart-icon">
+        <button className="shopping-cart-icon" onClick={checkOut}>
           <i className="fa-solid fa-cart-shopping"></i>
         </button>
 

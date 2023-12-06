@@ -6,17 +6,31 @@ import { useState } from "react";
 import { getWishlist, setWishlist } from "../../Wishlist";
 
 const Homepage = () => {
+  const [isWishlistPopup, setIsWishlistPopup] = useState(false);
+  const [wishlistItems, setWishlistItems] = useState(getWishlist);
   const navigate = useNavigate();
+
+  const windowScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const readMore = () => {
     navigate("/blog");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  const shopNow = () => {
-    navigate("/shop");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    windowScrollToTop();
   };
 
-  const [wishlistItems, setWishlistItems] = useState(getWishlist);
+  const shopNow = () => {
+    navigate("/shop");
+    windowScrollToTop();
+  };
+
+  const WishlistPopup = () => {
+    setIsWishlistPopup(true);
+
+    const timeoutID = setTimeout(() => {
+      setIsWishlistPopup(false);
+    }, 3000);
+  };
+
   const addToWishlist = (item) => {
     setWishlistItems((wishlistItems) => {
       let updatedWishlistItems = [...wishlistItems];
@@ -27,6 +41,7 @@ const Homepage = () => {
 
       if (!isThere) {
         updatedWishlistItems.push(item);
+        WishlistPopup();
       } else {
         updatedWishlistItems = updatedWishlistItems.filter(
           (wishlistItem) => wishlistItem.id !== item.id
@@ -146,6 +161,16 @@ const Homepage = () => {
           SHOP NOW
         </button>
       </div>
+
+      {/* Popups */}
+      {isWishlistPopup && (
+        <div className="popup">
+          <p>Item added to Wishlist</p>
+          <button onClick={() => setIsWishlistPopup(false)}>
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      )}
 
       {/* Latest Blog */}
       <div className="latest-blog">
