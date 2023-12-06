@@ -60,6 +60,7 @@
 .shop-sort i {
   background-color: #FFFFFF;
   padding: auto;
+  opacity: 0.7;
 }
 
 .dropdown select {
