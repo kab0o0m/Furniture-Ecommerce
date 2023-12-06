@@ -86,7 +86,7 @@
   overflow: hidden;
 }
 
-.card-img img {
+.card-img {
   width: 100%;
 }
 
@@ -200,12 +200,14 @@
 .latest-blog-2-img:hover,
 .latest-blog-3-img:hover {
   filter:brightness(70%);
+  cursor: pointer;
 }
 
 .latest-blog-1-img:hover .latest-blog-button,
 .latest-blog-2-img:hover .latest-blog-button,
 .latest-blog-3-img:hover .latest-blog-button{
   display: block;
+  cursor: pointer;
 }
 
 .shop-now-button:hover,

@@ -2,13 +2,16 @@ import "./Homepage.css";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import IMAGES from "../../Images.js";
+
 const Homepage = () => {
   const navigate = useNavigate();
   const readMore = () => {
     navigate("/blog");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const shopNow = () => {
     navigate("/shop");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -73,8 +76,8 @@ const Homepage = () => {
               (item) => {
                 return (
                   <div key={item.id} className="card">
-                    <div className="card-img">
-                      <img src={item.image} alt="" />
+                    <div>
+                      <img src={item.image} className="card-img" />
                     </div>
                     <p className="card-info-1">{item.description}</p>
                     <p className="card-info-2">{item.price}</p>

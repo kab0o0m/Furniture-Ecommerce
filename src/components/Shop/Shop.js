@@ -7,6 +7,9 @@ const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   const totalPages = Math.ceil(IMAGES.length / itemsPerPage);
+  const [currentLayout, setCurrentLayout] = useState("shop-display-grid");
+  const [currentCardLayout, setCurrentCardLayout] = useState("card-column");
+  const [imageSize, setImageSize] = useState("card-img-large");
   const options = [
     "Featured",
     "Best Selling",
@@ -18,6 +21,17 @@ const Shop = () => {
 
   const handleChange = (e) => {
     setSelectedOption(e.target.value);
+  };
+  const displayFlex = () => {
+    setCurrentLayout("shop-display-flex");
+    setCurrentCardLayout("card-row");
+    setImageSize("card-img-small");
+  };
+
+  const displayGrid = () => {
+    setCurrentLayout("shop-display-grid");
+    setCurrentCardLayout("card-column");
+    setImageSize("card-img-large");
   };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -39,10 +53,14 @@ const Shop = () => {
       <div className="shop-sort">
         <div className="icons">
           <div className="icon1">
-            <i class="fa fa-th"></i>
+            <button onClick={displayGrid}>
+              <i class="fa fa-th"></i>
+            </button>
           </div>
           <div className="icon2">
-            <i class="fa fa-list"></i>
+            <button onClick={displayFlex}>
+              <i class="fa fa-list"></i>
+            </button>
           </div>
         </div>
 
@@ -61,12 +79,12 @@ const Shop = () => {
       </div>
 
       {/* Display Products */}
-      <div className="shop-display">
+      <div className={currentLayout}>
         {filteredItems.map((item) => {
           return (
-            <div key={item.id} className="card">
+            <div key={item.id} className={currentCardLayout}>
               <div className="card-img">
-                <img src={item.image} alt="" />
+                <img src={item.image} className={imageSize} />
               </div>
               <p className="card-info-1">{item.description}</p>
               <p className="card-info-2">{item.price}</p>

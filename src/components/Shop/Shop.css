@@ -34,6 +34,7 @@
   align-items: center;
   border: 1px solid #c2c2c2;
   margin: 0 0 2rem 0;
+
 }
 
 .shop-sort .icons {
@@ -49,8 +50,16 @@
   border: 1px solid #c2c2c2;
 }
 
-i {
-  padding: 1rem;
+.shop-sort button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+.shop-sort i {
+  background-color: #FFFFFF;
+  padding: auto;
 }
 
 .dropdown select {
@@ -60,7 +69,7 @@ i {
   opacity: 0.5;
 }
 
-.shop-display {
+.shop-display-grid {
   display: grid;
   grid-template-rows: auto; 
   grid-template-columns: repeat(3, 1fr); 
@@ -69,10 +78,16 @@ i {
   width: 70rem;
 }
 
-.card {
+.shop-display-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-column {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 32rem;
   border: 1px solid #cfcfcf;
@@ -80,16 +95,36 @@ i {
   overflow: hidden;
 }
 
-.card-img img {
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 2rem 0;
+  padding: 0 1rem 0 0;
+  width: 70rem;
+  overflow: hidden;
+}
+
+.card-row .card-img {
+  width: 15rem;
+  border-radius: 10%;
+  overflow: hidden;
+}
+
+.card-img-large {
   width: 100%;
+}
+
+.card-img-small {
+  width:100%;
 }
 
 
 .card-info-1 {
-  padding: 1rem 0 0.5rem 0;
+  padding: 0.5rem 0 0.5rem 0;
 }
 .card-info-2 {
-  padding: 0 0 1rem 0;
+  padding: 0.5rem 0 0.5rem 0;
 }
 
 .card-icons {

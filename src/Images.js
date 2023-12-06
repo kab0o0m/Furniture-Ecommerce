@@ -14,7 +14,7 @@ const IMAGES = [
   {
     id: 3,
     image: "./Images/Product3.webp",
-    description: "Multi-Story Compartment",
+    description: "Multi-Story Cupboard",
     price: "SGD 79.90",
   },
   {
