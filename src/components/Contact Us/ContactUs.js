@@ -1,11 +1,12 @@
 import "./ContactUs.css";
+import { Link } from "react-router-dom";
 
 const ContactUs = () => {
   return (
     <div className="contact-us">
       {/* Header */}
       <div className="contact-us-header">
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
         <div>/</div>
         <div className="contact-us-header-page">
           <p>Contact</p>

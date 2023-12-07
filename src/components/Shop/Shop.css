@@ -120,6 +120,13 @@
   width:100%;
 }
 
+.card-info-description,
+.card-info-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+}
 
 .card-info-1 {
   padding: 0.5rem 0 0.5rem 0;
@@ -186,7 +193,7 @@
   color: #FFFFFF;
   position: fixed;
   bottom: 1rem;
-  animation: fadeInOut 3s ease-in-out;
+  animation: fadeInOut 2s ease-in-out;
   animation-iteration-count: initial;
 }
 

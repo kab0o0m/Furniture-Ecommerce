@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
@@ -5,9 +6,9 @@ const Footer = () => {
     <div className="footer">
       {/* Description */}
       <div className="footer-description">
-        <a href="/" className="footer-title">
+        <Link to="/" className="footer-title">
           Furvo
-        </a>
+        </Link>
         <p>
           Whether you're looking to furnish your entire home or just add a few
           new pieces, we have something for everyone. Our collection includes a
@@ -15,40 +16,40 @@ const Footer = () => {
           rustic.
         </p>
         <div className="footer-icons">
-          <a href="/">
+          <Link to="/">
             <i className="fa-brands fa-facebook"></i>
-          </a>
-          <a href="/">
+          </Link>
+          <Link to="/">
             <i className="fa-brands fa-twitter"></i>
-          </a>
-          <a href="/">
+          </Link>
+          <Link to="/">
             <i className="fa-brands fa-google"></i>
-          </a>
-          <a href="/">
+          </Link>
+          <Link to="/">
             <i className="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a href="/">
+          </Link>
+          <Link to="/">
             <i className="fa-brands fa-square-instagram"></i>
-          </a>
+          </Link>
         </div>
       </div>
       {/* Quick Links */}
       <div className="quick-links">
         <h3>QUICK LINKS</h3>
-        <a href="/">About</a>
-        <a href="/">Delivery Information</a>
-        <a href="/">Privacy Policy</a>
-        <a href="/">Terms & Conditions</a>
-        <a href="/">Best Selling Products</a>
+        <Link to="/">About</Link>
+        <Link to="/">Delivery Information</Link>
+        <Link to="/">Privacy Policy</Link>
+        <Link to="/">Terms & Conditions</Link>
+        <Link to="/">Best Selling Products</Link>
       </div>
       {/* Accounts */}
       <div className="accounts">
         <h3>ACCOUNTS</h3>
-        <a href="/">My Account</a>
-        <a href="/">Wishlist</a>
-        <a href="/">My Order</a>
-        <a href="/">Checkout</a>
-        <a href="/">My Address</a>
+        <Link to="/">My Account</Link>
+        <Link to="/">Wishlist</Link>
+        <Link to="/">My Order</Link>
+        <Link to="/">Checkout</Link>
+        <Link to="/">My Address</Link>
       </div>
       {/* Newsletter */}
       <div className="newsletter">

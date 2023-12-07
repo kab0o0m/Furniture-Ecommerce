@@ -37,6 +37,9 @@
   width: 40rem;
   height: 40rem;
   margin: 0 5rem 0 0;
+  background-image: url("../../../public/Images/AboutUs.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .about-company img{

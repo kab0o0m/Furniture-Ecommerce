@@ -27,7 +27,7 @@ const Shop = () => {
 
     const timeoutID = setTimeout(() => {
       setIsAddToCartPopup(false);
-    }, 3000);
+    }, 2000);
   };
   const addToShoppingCart = (item) => {
     setCheckoutItems((checkoutItems) => {
@@ -66,7 +66,7 @@ const Shop = () => {
 
     const timeoutID = setTimeout(() => {
       setIsWishlistPopup(false);
-    }, 3000);
+    }, 2000);
   };
 
   const eyePopup = (item) => {
@@ -99,6 +99,7 @@ const Shop = () => {
   const handleChange = (e) => {
     setSelectedOption(e.target.value);
   };
+
   const displayFlex = () => {
     setCurrentLayout("shop-display-flex");
     setCurrentCardLayout("card-row");
@@ -185,8 +186,12 @@ const Shop = () => {
               <div className="card-img">
                 <img src={item.image} className={imageSize} />
               </div>
-              <p className="card-info-1">{item.description}</p>
-              <p className="card-info-2">{item.price}</p>
+              <div className="card-info-description">
+                <p className="card-info-1">{item.description}</p>
+              </div>
+              <div className="card-info-price">
+                <p className="card-info-2">SGD {item.price}</p>
+              </div>
               <div className="card-icons">
                 <div className="card-icons-1">
                   <button

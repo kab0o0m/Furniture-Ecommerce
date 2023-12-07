@@ -1,11 +1,12 @@
 import "./AboutUs.css";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
     <div className="about-us">
       {/* Header */}
       <div className="about-us-header">
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
         <div>/</div>
         <div className="about-us-header-page">
           <p>About Us</p>
@@ -14,9 +15,7 @@ const AboutUs = () => {
 
       {/* About Company */}
       <div className="about-company">
-        <div className="about-company-img">
-          <img src="" alt="" />
-        </div>
+        <div className="about-company-img"></div>
         <div className="about-company-description">
           <h1>
             About <span>Company</span>

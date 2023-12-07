@@ -1,4 +1,4 @@
-// wishlist.js
+//Checkout.js
 const CHECKOUT_KEY = "checkout";
 let checkoutList = JSON.parse(localStorage.getItem(CHECKOUT_KEY)) || [];
 

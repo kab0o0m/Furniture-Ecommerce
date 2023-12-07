@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Blog.css";
 
 const Blog = () => {
@@ -11,7 +11,7 @@ const Blog = () => {
     <div className="blog">
       {/* Header */}
       <div className="blog-header">
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
         <div>/</div>
         <div className="blog-header-page">
           <p>Blog</p>
