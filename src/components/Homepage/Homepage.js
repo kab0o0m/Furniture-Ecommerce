@@ -2,12 +2,18 @@ import "./Homepage.css";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import IMAGES from "../../Images.js";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { getWishlist, setWishlist } from "../../Wishlist";
+import { UserContext } from "../../App";
+import { getCheckoutList, setCheckoutList } from "../../CheckoutList";
 
 const Homepage = () => {
   const [isWishlistPopup, setIsWishlistPopup] = useState(false);
   const [wishlistItems, setWishlistItems] = useState(getWishlist);
+  const { cartCount, setCartCount } = useContext(UserContext);
+  const [checkoutItems, setCheckoutItems] = useState(getCheckoutList);
+  const [isAddToCartPopup, setIsAddToCartPopup] = useState(false);
+
   const navigate = useNavigate();
 
   const windowScrollToTop = () => {
@@ -55,6 +61,48 @@ const Homepage = () => {
 
   const isInWishlist = (item) => {
     return wishlistItems.find((wishlistItem) => wishlistItem.id === item.id);
+  };
+
+  const addToCartPopup = () => {
+    setIsAddToCartPopup(true);
+
+    const timeoutID = setTimeout(() => {
+      setIsAddToCartPopup(false);
+    }, 2000);
+  };
+  const addToShoppingCart = (item) => {
+    setCheckoutItems((checkoutItems) => {
+      let updatedCheckoutList = [...checkoutItems];
+
+      const existingItem = updatedCheckoutList.find(
+        (checkoutItem) => checkoutItem.id === item.id
+      );
+
+      if (existingItem) {
+        // Item already in the cart, update its quantity
+        existingItem.quantity += 1;
+      } else {
+        // Item not in the cart, add it with quantity 1
+        const newItem = { ...item, quantity: 1 };
+        updatedCheckoutList.push(newItem);
+      }
+      // Update the cart count based on the total number of items in the cart
+      const totalItemsInCart = updatedCheckoutList.reduce(
+        (total, item) => total + item.quantity,
+        0
+      );
+
+      addToCartPopup();
+      setCartCount(totalItemsInCart);
+      setCheckoutList(updatedCheckoutList);
+
+      console.log(updatedCheckoutList);
+      console.log("Checkout count: " + cartCount);
+      return updatedCheckoutList;
+    });
+  };
+  const isInCart = (item) => {
+    return checkoutItems.find((checkoutItem) => checkoutItem.id === item.id);
   };
 
   return (
@@ -142,8 +190,14 @@ const Homepage = () => {
                     </button>
                   </div>
                   <div className="card-icons-3">
-                    <button className="add-to-cart">
-                      <i className="fa-solid fa-cart-shopping"></i>
+                    <button
+                      className="add-to-cart"
+                      onClick={() => addToShoppingCart(item)}
+                    >
+                      <i
+                        style={{ color: isInCart(item) ? "#FF7E03" : "black" }}
+                        className="fa-solid fa-cart-shopping"
+                      ></i>
                     </button>
                   </div>
                 </div>

@@ -1,10 +1,21 @@
 import "./Nav.css";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getCheckoutList, setCheckoutList } from "../../CheckoutList";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(() =>
+    getCheckoutList().reduce((total, item) => total + item.quantity, 0)
+  );
+
+  useEffect(() => {
+    setCartCount(
+      getCheckoutList().reduce((total, item) => total + item.quantity, 0)
+    );
+  }, [getCheckoutList()]);
+
   const windowScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -58,6 +69,7 @@ function Nav() {
 
         <button className="shopping-cart-icon" onClick={checkOut}>
           <i className="fa-solid fa-cart-shopping"></i>
+          <div className="cart-count">{cartCount}</div>
         </button>
 
         <button

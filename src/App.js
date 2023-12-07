@@ -8,25 +8,33 @@ import ContactUs from "./components/Contact Us/ContactUs";
 import Footer from "./components/Footer/Footer";
 import Wishlist from "./components/Wishlist/Wishlist";
 import Checkout from "./components/Checkout/Checkout";
+import { createContext, useState } from "react";
+import { getCheckoutList, setCheckoutList } from "./CheckoutList";
+
+export const UserContext = createContext();
 
 function App() {
+  const [cartCount, setCartCount] = useState(() =>
+    getCheckoutList().reduce((total, item) => total + item.quantity, 0)
+  );
+
   return (
     <Router>
-      <div className="App">
+      <UserContext.Provider value={{ cartCount, setCartCount }}>
         <Navigation />
-      </div>
-      <div className="content">
-        <Routes>
-          <Route exact path="/" element={<Homepage />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-      </div>
-      <Footer />
+        <div className="content">
+          <Routes>
+            <Route exact path="/" element={<Homepage />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Routes>
+        </div>
+        <Footer />
+      </UserContext.Provider>
     </Router>
   );
 }

@@ -38,15 +38,34 @@ nav div button {
   border: none;
   background-color: #FFFFFF;
   cursor: pointer;
+  width: 2rem;
+  height: 2rem;
 }
 
 nav div button i {
   color: #313131;
+  font-size: 1.2rem;
 }
 
 .menu-bar {
   display: none;
 }
+
+.shopping-cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -0.2rem;
+  right: 0.2rem; 
+  background-color: #FF7E03;
+  padding: 0.2rem;
+  border-radius: 50%;
+  z-index: 1;
+  font-size: 0.7rem;
+  color: #FFFFFF;
+} 
 
 @media (max-width: 850px) {
   .menu,

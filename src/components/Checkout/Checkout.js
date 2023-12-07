@@ -1,9 +1,12 @@
 import "./Checkout.css";
 import { getCheckoutList, setCheckoutList } from "../../CheckoutList";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../App";
 
 const Checkout = () => {
+  const { cartCount, setCartCount } = useContext(UserContext);
+
   const [cartList, setCartList] = useState(getCheckoutList());
 
   const updateQuantity = (itemId, newQuantity) => {
@@ -16,6 +19,7 @@ const Checkout = () => {
 
     setCartList(updatedCartList);
     setCheckoutList(updatedCartList);
+    setCartCount(cartList.reduce((total, item) => total + item.quantity, 0));
   };
 
   const handleDecreaseQuantity = (itemId) => {

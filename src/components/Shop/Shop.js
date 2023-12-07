@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./Shop.css";
 import IMAGES from "../../Images";
 import { getWishlist, setWishlist } from "../../Wishlist";
 import { getCheckoutList, setCheckoutList } from "../../CheckoutList";
+import { UserContext } from "../../App";
 
 const Shop = () => {
   const [selectedOption, setSelectedOption] = useState("Select an option");
@@ -13,7 +14,6 @@ const Shop = () => {
   const [imageSize, setImageSize] = useState("card-img-large");
   const [isWishlistPopup, setIsWishlistPopup] = useState(false);
   const [checkoutItems, setCheckoutItems] = useState(getCheckoutList);
-  const [cartCount, setCartCount] = useState(checkoutItems.length);
   const [isAddToCartPopup, setIsAddToCartPopup] = useState(false);
 
   const itemsPerPage = 6;
@@ -21,6 +21,7 @@ const Shop = () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = currentPage * itemsPerPage;
   const filteredItems = IMAGES.slice(startIndex, endIndex);
+  const { cartCount, setCartCount } = useContext(UserContext);
 
   const addToCartPopup = () => {
     setIsAddToCartPopup(true);
@@ -40,7 +41,6 @@ const Shop = () => {
       if (existingItem) {
         // Item already in the cart, update its quantity
         existingItem.quantity += 1;
-        addToCartPopup();
       } else {
         // Item not in the cart, add it with quantity 1
         const newItem = { ...item, quantity: 1 };
@@ -52,6 +52,7 @@ const Shop = () => {
         0
       );
 
+      addToCartPopup();
       setCartCount(totalItemsInCart);
       setCheckoutList(updatedCheckoutList);
 
@@ -138,6 +139,10 @@ const Shop = () => {
     return wishlistItems.find((wishlistItem) => wishlistItem.id === item.id);
   };
 
+  const isInCart = (item) => {
+    return checkoutItems.find((checkoutItem) => checkoutItem.id === item.id);
+  };
+
   return (
     <div className="shop">
       {/* Header */}
@@ -216,7 +221,10 @@ const Shop = () => {
                     className="add-to-cart"
                     onClick={() => addToShoppingCart(item)}
                   >
-                    <i className="fa-solid fa-cart-shopping"></i>
+                    <i
+                      style={{ color: isInCart(item) ? "#FF7E03" : "black" }}
+                      className="fa-solid fa-cart-shopping"
+                    ></i>
                   </button>
                 </div>
               </div>
