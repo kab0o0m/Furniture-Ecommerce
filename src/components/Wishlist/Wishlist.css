@@ -48,10 +48,12 @@
 .wishlist-display-title,
 .wishlist-display-price,
 .wishlist-display-discount,
+.wishlist-display-remove,
 .wishlist-display-img-header,
 .wishlist-display-title-header,
 .wishlist-display-price-header,
-.wishlist-display-discount-header
+.wishlist-display-discount-header,
+.wishlist-display-remove-header
  {
   width: 10rem;
   display: flex;
@@ -64,3 +66,9 @@
   overflow: hidden;
 }
 
+
+.wishlist-display-remove button{
+  background-color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
