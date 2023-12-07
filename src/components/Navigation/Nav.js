@@ -59,7 +59,7 @@ function Nav() {
           <a href="/contact">Contact Us</a>
         </li>
       </ul>
-      <div>
+      <div className="menu-right">
         <button className="search-icon">
           <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
         </button>

@@ -9,10 +9,10 @@ const Shop = () => {
   const [selectedOption, setSelectedOption] = useState("Select an option");
   const [currentPage, setCurrentPage] = useState(1);
   const [wishlistItems, setWishlistItems] = useState(getWishlist);
+  const [isWishlistPopup, setIsWishlistPopup] = useState(false);
   const [currentLayout, setCurrentLayout] = useState("shop-display-grid");
   const [currentCardLayout, setCurrentCardLayout] = useState("card-column");
   const [imageSize, setImageSize] = useState("card-img-large");
-  const [isWishlistPopup, setIsWishlistPopup] = useState(false);
   const [checkoutItems, setCheckoutItems] = useState(getCheckoutList);
   const [isAddToCartPopup, setIsAddToCartPopup] = useState(false);
 
@@ -200,7 +200,7 @@ const Shop = () => {
               <div className="card-icons">
                 <div className="card-icons-1">
                   <button
-                    className="wishlist"
+                    className="add-to-wishlist"
                     onClick={() => addToWishlist(item)}
                   >
                     <i

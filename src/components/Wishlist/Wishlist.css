@@ -1,0 +1,66 @@
+.wishlist {
+  font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+}
+
+.wishlist-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2F2F2;
+  gap: 1rem;
+  width: 100%;
+  height: 10rem;
+  margin: 0 0 5rem 0;
+}
+
+.wishlist-header a{
+  text-decoration: none;
+  color: #303030;
+}
+
+.wishlist-header-page p{
+  opacity: 0.5;
+}
+
+.wishlist-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-display-header,
+.wishlist-display-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70rem;
+  padding: 2rem;
+}
+
+.wishlist-display-body {
+  margin: 0 0 2rem 0;
+}
+
+.wishlist-display-img,
+.wishlist-display-title,
+.wishlist-display-price,
+.wishlist-display-discount,
+.wishlist-display-img-header,
+.wishlist-display-title-header,
+.wishlist-display-price-header,
+.wishlist-display-discount-header
+ {
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wishlist-display-img {
+  border-radius: 10%;
+  overflow: hidden;
+}
+

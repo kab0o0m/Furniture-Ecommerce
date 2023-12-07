@@ -173,7 +173,7 @@ const Homepage = () => {
                 <div className="card-icons">
                   <div className="card-icons-1">
                     <button
-                      className="wishlist"
+                      className="add-to-wishlist"
                       onClick={() => addToWishlist(item)}
                     >
                       <i
