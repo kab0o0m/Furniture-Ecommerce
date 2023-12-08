@@ -15,6 +15,7 @@ const Shop = () => {
   const [imageSize, setImageSize] = useState("card-img-large");
   const [checkoutItems, setCheckoutItems] = useState(getCheckoutList);
   const [isAddToCartPopup, setIsAddToCartPopup] = useState(false);
+  const [isEyePopup, setIsEyePopup] = useState(false);
 
   const itemsPerPage = 6;
   const totalPages = Math.ceil(IMAGES.length / itemsPerPage);
@@ -22,6 +23,15 @@ const Shop = () => {
   const endIndex = currentPage * itemsPerPage;
   const filteredItems = IMAGES.slice(startIndex, endIndex);
   const { cartCount, setCartCount } = useContext(UserContext);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const openEyePopup = (item) => {
+    setSelectedItem(item);
+    setIsEyePopup(true);
+  };
+
+  const closeEyePopup = () => {
+    setIsEyePopup(false);
+  };
 
   const addToCartPopup = () => {
     setIsAddToCartPopup(true);
@@ -55,6 +65,7 @@ const Shop = () => {
       addToCartPopup();
       setCartCount(totalItemsInCart);
       setCheckoutList(updatedCheckoutList);
+      closeEyePopup();
       return updatedCheckoutList;
     });
   };
@@ -65,24 +76,6 @@ const Shop = () => {
     const timeoutID = setTimeout(() => {
       setIsWishlistPopup(false);
     }, 2000);
-  };
-
-  const eyePopup = (item) => {
-    return (
-      <div className="checkout-popup">
-        <div className="checkout-popup-img">
-          <img src={item.image} alt="" />
-        </div>
-        <div className="checkout-popup-right">
-          <div className="popup-title">{item.title}</div>
-          <div className="popup-description">{item.description}</div>
-          <div className="popup-quantity">{item.quantity}</div>
-          <div className="checkout-add-button">
-            <button className="add-button">Add to cart</button>
-          </div>
-        </div>
-      </div>
-    );
   };
 
   const options = [
@@ -189,7 +182,7 @@ const Shop = () => {
                 <img src={item.image} className={imageSize} />
               </div>
               <div className="card-info-description">
-                <p className="card-info-1">{item.description}</p>
+                <p className="card-info-1">{item.title}</p>
               </div>
               <div className="card-info-price">
                 <p className="card-info-2">SGD {item.price}</p>
@@ -209,7 +202,10 @@ const Shop = () => {
                   </button>
                 </div>
                 <div className="card-icons-2">
-                  <button className="preview">
+                  <button
+                    className="preview"
+                    onClick={() => openEyePopup(item)}
+                  >
                     <i className="fa-regular fa-eye"></i>
                   </button>
                 </div>
@@ -242,10 +238,40 @@ const Shop = () => {
       )}
 
       {/* Checkout Popup for middle button */}
+      {isEyePopup && selectedItem && (
+        <div className="checkout-popup">
+          <div className="checkout-popup-img">
+            <img src={selectedItem.image} alt="" />
+          </div>
+          <div className="checkout-popup-right">
+            <div className="popup-title">
+              <h1>{selectedItem.title}</h1>
+            </div>
+            <div className="popup-price">
+              <p>SGD {selectedItem.price}</p>
+            </div>
+            <div className="popup-description">
+              <p>{selectedItem.description}</p>
+            </div>
+
+            <div className="checkout-add-button">
+              <button
+                className="add-button"
+                onClick={() => addToShoppingCart(selectedItem)}
+              >
+                Add to cart
+              </button>
+            </div>
+            <button className="close-button" onClick={closeEyePopup}>
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Add to Cart Popup for right button*/}
       {isAddToCartPopup && (
-        <div className="checkout-popup">
+        <div className="add-cart-popup">
           <p>Item added to Cart</p>
           <button onClick={() => setIsAddToCartPopup(false)}>
             <i className="fa-solid fa-xmark"></i>
