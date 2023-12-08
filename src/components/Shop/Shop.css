@@ -235,6 +235,7 @@
   background-color: #FFFFFF;
   position: fixed;
   bottom: 10rem;
+  z-index: 999;
 }
 
 .checkout-popup img{

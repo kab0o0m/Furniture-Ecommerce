@@ -239,9 +239,10 @@
   background-color: hsl(218, 3%, 55%);
   color: #FFFFFF;
   position: fixed;
-  bottom: 1rem;
+  bottom: 5rem;
   animation: fadeInOut 3s ease-in-out;
   animation-iteration-count: initial;
+  z-index: 999;
 }
 
 .popup p{
