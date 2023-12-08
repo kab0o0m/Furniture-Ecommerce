@@ -13,6 +13,17 @@ const Homepage = () => {
   const { cartCount, setCartCount } = useContext(UserContext);
   const [checkoutItems, setCheckoutItems] = useState(getCheckoutList);
   const [isAddToCartPopup, setIsAddToCartPopup] = useState(false);
+  const [isEyePopup, setIsEyePopup] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const openEyePopup = (item) => {
+    setSelectedItem(item);
+    setIsEyePopup(true);
+  };
+
+  const closeEyePopup = () => {
+    setIsEyePopup(false);
+  };
 
   const navigate = useNavigate();
 
@@ -168,7 +179,7 @@ const Homepage = () => {
                 <div>
                   <img src={item.image} className="card-img" />
                 </div>
-                <p className="card-info-1">{item.description}</p>
+                <p className="card-info-1">{item.title}</p>
                 <p className="card-info-2">SGD {item.price}</p>
                 <div className="card-icons">
                   <div className="card-icons-1">
@@ -185,7 +196,10 @@ const Homepage = () => {
                     </button>
                   </div>
                   <div className="card-icons-2">
-                    <button className="preview">
+                    <button
+                      className="preview"
+                      onClick={() => openEyePopup(item)}
+                    >
                       <i className="fa-regular fa-eye"></i>
                     </button>
                   </div>
@@ -221,6 +235,53 @@ const Homepage = () => {
         <div className="popup">
           <p>Item added to Wishlist</p>
           <button onClick={() => setIsWishlistPopup(false)}>
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      )}
+
+      {/* Checkout Popup for middle button */}
+      {isEyePopup && selectedItem && (
+        <motion.div
+          className="checkout-popup"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="checkout-popup-img">
+            <img src={selectedItem.image} alt="" />
+          </div>
+          <div className="checkout-popup-right">
+            <div className="popup-title">
+              <h1>{selectedItem.title}</h1>
+            </div>
+            <div className="popup-price">
+              <p>SGD {selectedItem.price}</p>
+            </div>
+            <div className="popup-description">
+              <p>{selectedItem.description}</p>
+            </div>
+
+            <div className="checkout-add-button">
+              <button
+                className="add-button"
+                onClick={() => addToShoppingCart(selectedItem)}
+              >
+                Add to cart
+              </button>
+            </div>
+            <button className="close-button" onClick={closeEyePopup}>
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </motion.div>
+      )}
+
+      {/* Add to Cart Popup for right button*/}
+      {isAddToCartPopup && (
+        <div className="add-cart-popup">
+          <p>Item added to Cart</p>
+          <button onClick={() => setIsAddToCartPopup(false)}>
             <i className="fa-solid fa-xmark"></i>
           </button>
         </div>

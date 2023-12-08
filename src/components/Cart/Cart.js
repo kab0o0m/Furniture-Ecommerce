@@ -82,15 +82,19 @@ const Cart = () => {
       {cartList.length > 0 && (
         <div className="cart-body">
           {/* Display cart-header */}
-          {cartList.length > 0 && (
-            <div className="cart-display-header">
+
+          <div className="cart-display-header">
+            <div className="cart-display-subheader-1">
+              <h1>Shopping Cart</h1>
+            </div>
+            <div className="cart-display-subheader-2">
               <div className="cart-display-img-header">Image</div>
               <div className="cart-display-title-header">Product</div>
               <div className="cart-display-price-header">Price</div>
               <div className="cart-display-quantity-header">Quantity</div>
               <div className="cart-display-total-header">Total</div>
             </div>
-          )}
+          </div>
 
           {/* Display cart-body */}
           {cartList.map((item) => (
@@ -98,7 +102,7 @@ const Cart = () => {
               <div className="cart-display-img">
                 <img src={item.image} alt="" className="card-img-small" />
               </div>
-              <div className="cart-display-title">{item.description}</div>
+              <div className="cart-display-title">{item.title}</div>
               <div className="cart-display-price">SGD {item.price}</div>
               <div className="cart-display-quantity">
                 <div className="minus">

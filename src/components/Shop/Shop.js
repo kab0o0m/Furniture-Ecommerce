@@ -4,6 +4,7 @@ import IMAGES from "../../Images";
 import { getWishlist, setWishlist } from "../../Wishlist";
 import { getCheckoutList, setCheckoutList } from "../../CheckoutList";
 import { UserContext } from "../../App";
+import { motion } from "framer-motion";
 
 const Shop = () => {
   const [selectedOption, setSelectedOption] = useState("Select an option");
@@ -16,6 +17,7 @@ const Shop = () => {
   const [checkoutItems, setCheckoutItems] = useState(getCheckoutList);
   const [isAddToCartPopup, setIsAddToCartPopup] = useState(false);
   const [isEyePopup, setIsEyePopup] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const itemsPerPage = 6;
   const totalPages = Math.ceil(IMAGES.length / itemsPerPage);
@@ -23,7 +25,7 @@ const Shop = () => {
   const endIndex = currentPage * itemsPerPage;
   const filteredItems = IMAGES.slice(startIndex, endIndex);
   const { cartCount, setCartCount } = useContext(UserContext);
-  const [selectedItem, setSelectedItem] = useState(null);
+
   const openEyePopup = (item) => {
     setSelectedItem(item);
     setIsEyePopup(true);
@@ -239,7 +241,12 @@ const Shop = () => {
 
       {/* Checkout Popup for middle button */}
       {isEyePopup && selectedItem && (
-        <div className="checkout-popup">
+        <motion.div
+          className="checkout-popup"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="checkout-popup-img">
             <img src={selectedItem.image} alt="" />
           </div>
@@ -266,7 +273,7 @@ const Shop = () => {
               <i className="fa-solid fa-xmark"></i>
             </button>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {/* Add to Cart Popup for right button*/}
