@@ -181,9 +181,18 @@
 }
 
 .pages-button:hover {
+  color: #FF7E03;
+}
+
+.selected {
   background-color: #FF7E03;
   color: #FFFFFF;
 }
+
+.selected:hover {
+  color: #FFFFFF;
+}
+
 
 .popup,
 .add-cart-popup{

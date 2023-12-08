@@ -151,7 +151,7 @@ const Cart = () => {
             </div>
           </div>
           <div className="cart-button">
-            <button className="checkout" onClick={checkOut}>
+            <button className="checkout-cart-button" onClick={checkOut}>
               PROCEED TO CHECKOUT
             </button>
           </div>

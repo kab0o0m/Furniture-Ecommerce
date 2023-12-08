@@ -26,6 +26,8 @@ const Shop = () => {
   const filteredItems = IMAGES.slice(startIndex, endIndex);
   const { cartCount, setCartCount } = useContext(UserContext);
 
+  const isPageSelected = (pageNumber) => currentPage === pageNumber;
+
   const openEyePopup = (item) => {
     setSelectedItem(item);
     setIsEyePopup(true);
@@ -295,7 +297,9 @@ const Shop = () => {
               setCurrentPage(index + 1);
               window.scrollTo({ top: 0, behavior: "smooth" }); // Scrolls to the top of the page
             }}
-            className="pages-button"
+            className={`pages-button ${
+              isPageSelected(index + 1) ? "selected" : ""
+            }`}
           >
             {index + 1}
           </button>

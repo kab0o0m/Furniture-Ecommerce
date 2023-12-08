@@ -50,7 +50,7 @@ const Wishlist = () => {
               <div className="wishlist-display-img">
                 <img src={item.image} alt="" className="card-img-small" />
               </div>
-              <div className="wishlist-display-title">{item.description}</div>
+              <div className="wishlist-display-title">{item.title}</div>
               <div className="wishlist-display-price">SGD {item.price}</div>
               <div className="wishlist-display-discount">None</div>
               <div className="wishlist-display-remove">

@@ -74,7 +74,7 @@ form {
   gap: 1rem;
 }
 
-form input[type="email"] {
+#newsletter-email {
   flex: 1;
   padding: 0.5rem;
   border: none;

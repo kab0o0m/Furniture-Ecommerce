@@ -1,0 +1,138 @@
+.checkout {
+  font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 2rem 0;
+}
+
+.checkout-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2F2F2;
+  gap: 1rem;
+  width: 100%;
+  height: 10rem;
+  margin: 0 0 5rem 0;
+}
+
+.checkout-header a{
+  text-decoration: none;
+  color: #303030;
+}
+
+.checkout-header-page p{
+  opacity: 0.5;
+}
+
+.checkout-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25rem;
+}
+
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-body {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.checkout-body h2{
+  padding: 1rem 0 1rem 0;
+}
+
+.checkout-body input {
+  border: 1px solid #c7c7c7;
+  padding: 1rem;
+  opacity: 0.5;
+  margin: 0 1rem 1rem 0;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+}
+
+.country-select {
+  margin: 0 1rem 1rem 0;
+}
+
+.payment p{
+  padding: 0 0 1rem 0;
+  opacity: 0.7;
+}
+
+.submit-checkout{
+  width: 95%;
+  padding: 1rem;
+  background-color: #FF7F00;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+.checkout-right {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  background-color: #F2F2F2;
+  padding: 0 1rem 0 1rem;
+  border-radius: 10%;
+}
+
+.checkout-right-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 1rem 0;  
+  border-bottom: 1px solid #979797;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #979797;
+}
+
+.product-img{
+  border-radius: 10%;
+  overflow: hidden;
+
+}
+
+.product-img img{
+  width: 5rem;
+}
+
+.back-to-cart {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: #313131;
+  color: #FFFFFF;
+  border: none;
+  margin: 1rem 0 0 0;
+}
+
+.back-to-cart:hover {
+  cursor: pointer;
+  background-color: #FF7F00;
+  transition: 0.3s;
+}
+
+.checkout .cart-total-body {
+  width: 30rem;
+}
+
