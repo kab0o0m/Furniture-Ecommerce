@@ -84,6 +84,7 @@ nav div button i {
     width: 100%;
     opacity: 0;
     height:100vh;
+    z-index: 999;
   }
 
   #subnavbar.active {
