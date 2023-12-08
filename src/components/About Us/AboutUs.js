@@ -21,26 +21,28 @@ const AboutUs = () => {
             About <span>Company</span>
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut
-            perspiciatis eligendi ullam. Ipsam illum nostrum reiciendis, beatae
-            laudantium ipsum earum sit ipsa quos aut provident quo vitae vero
-            alias numquam minus vel pariatur dolor minima voluptatem nulla
-            architecto, omnis atque recusandae! Quod doloremque nam omnis
-            consequuntur maiores vero dicta!
+            Welcome to Furvo, where craftsmanship meets comfort in every piece.
+            As a leading furniture company, Furvo has been dedicated to
+            transforming houses into homes since our inception. Our passion lies
+            in creating exquisite and functional furniture that not only
+            enhances the aesthetics of your space but also provides unparalleled
+            comfort. At Furvo, we believe that furniture goes beyond mere
+            functionality; it is an expression of your style and personality.
+            With a commitment to quality materials and meticulous craftsmanship,
+            each Furvo piece tells a story of elegance and enduring design.
+            Whether you are furnishing a cozy corner or redesigning an entire
+            living space, Furvo is your trusted partner in crafting environments
+            that reflect your unique taste. Experience the artistry of furniture
+            with Furvo – where every detail matters, and every piece is a
+            statement of refined living.
           </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ullam
-            iusto veniam nisi eius voluptatem.
-          </p>
+          <p></p>
         </div>
       </div>
       {/* Meet Our Team */}
       <div className="meet-team">
         <h1>Meet Our Team</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ea
-          officia ullam. Dicta, voluptatem. Provident.
-        </p>
+        <p>Meet the Furvo team, where creativity meets craftsmanship.</p>
         <div className="meet-team-info"></div>
       </div>
     </div>

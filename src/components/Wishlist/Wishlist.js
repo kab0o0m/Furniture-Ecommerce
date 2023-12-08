@@ -15,7 +15,6 @@ const Wishlist = () => {
       );
 
       setWishlist(updatedWishlistItems);
-      console.log(updatedWishlistItems);
       return updatedWishlistItems;
     });
   };

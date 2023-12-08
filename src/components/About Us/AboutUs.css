@@ -65,6 +65,9 @@
   width: 40rem;
 }
 
+.about-company-description p {
+  line-height: 2rem;
+}
 .meet-team {
   display: flex;
   flex-direction: column;

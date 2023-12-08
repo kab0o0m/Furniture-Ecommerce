@@ -169,7 +169,7 @@ const Homepage = () => {
                   <img src={item.image} className="card-img" />
                 </div>
                 <p className="card-info-1">{item.description}</p>
-                <p className="card-info-2">{item.price}</p>
+                <p className="card-info-2">SGD {item.price}</p>
                 <div className="card-icons">
                   <div className="card-icons-1">
                     <button

@@ -3,7 +3,6 @@ const CHECKOUT_KEY = "checkout";
 let checkoutList = JSON.parse(localStorage.getItem(CHECKOUT_KEY)) || [];
 
 const getCheckoutList = () => {
-  console.log(checkoutList);
   return checkoutList;
 };
 

@@ -1,7 +1,7 @@
 import "./Nav.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { getCheckoutList, setCheckoutList } from "../../CheckoutList";
 
 function Nav() {
@@ -26,37 +26,37 @@ function Nav() {
     setIsOpen(!isOpen);
   };
 
-  const checkOut = () => {
-    navigate("/checkout");
+  const cart = () => {
+    navigate("/cart");
     windowScrollToTop();
   };
 
   return (
     <nav>
-      <a href="/" className="site-title">
+      <Link to="/" className="site-title">
         Furvo
-      </a>
+      </Link>
       <ul
         id="subnavbar"
         className={`${isOpen ? "#subnavbar active" : "#subnavbar"}`}
       >
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/shop">Shop</a>
+          <Link to="/shop">Shop</Link>
         </li>
         <li>
-          <a href="/blog">Blog</a>
+          <Link to="/blog">Blog</Link>
         </li>
         <li>
-          <a href="/wishlist">Wishlist</a>
+          <Link to="/wishlist">Wishlist</Link>
         </li>
         <li>
-          <a href="/about">About Us</a>
+          <Link to="/about">About Us</Link>
         </li>
         <li>
-          <a href="/contact">Contact Us</a>
+          <Link to="/contact">Contact Us</Link>
         </li>
       </ul>
       <div className="menu-right">
@@ -67,7 +67,7 @@ function Nav() {
           <i className="fa-solid fa-gear"></i>
         </button>
 
-        <button className="shopping-cart-icon" onClick={checkOut}>
+        <button className="shopping-cart-icon" onClick={cart}>
           <i className="fa-solid fa-cart-shopping"></i>
           <div className="cart-count">{cartCount}</div>
         </button>

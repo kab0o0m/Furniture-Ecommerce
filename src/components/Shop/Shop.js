@@ -55,9 +55,6 @@ const Shop = () => {
       addToCartPopup();
       setCartCount(totalItemsInCart);
       setCheckoutList(updatedCheckoutList);
-
-      console.log(updatedCheckoutList);
-      console.log("Checkout count: " + cartCount);
       return updatedCheckoutList;
     });
   };

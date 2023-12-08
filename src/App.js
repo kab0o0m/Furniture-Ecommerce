@@ -8,6 +8,7 @@ import ContactUs from "./components/Contact Us/ContactUs";
 import Footer from "./components/Footer/Footer";
 import Wishlist from "./components/Wishlist/Wishlist";
 import Checkout from "./components/Checkout/Checkout";
+import Cart from "./components/Cart/Cart";
 import { createContext, useState } from "react";
 import { getCheckoutList, setCheckoutList } from "./CheckoutList";
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </div>

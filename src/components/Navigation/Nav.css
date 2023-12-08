@@ -58,7 +58,7 @@ nav div button i {
 .cart-count {
   position: absolute;
   top: -0.2rem;
-  right: 0.2rem; 
+  right: 0; 
   background-color: #FF7E03;
   padding: 0.1rem 0.2rem 0.1rem 0.2rem;
   border-radius: 50%;
