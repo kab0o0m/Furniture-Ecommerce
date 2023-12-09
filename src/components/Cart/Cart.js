@@ -124,7 +124,7 @@ const Cart = () => {
           ))}
           <div className="continue-shopping">
             <button className="continue-shopping-button" onClick={shop}>
-              <i class="fa-solid fa-chevron-left"></i> CONTINUE SHOPPING
+              <i className="fa-solid fa-chevron-left"></i> CONTINUE SHOPPING
             </button>
           </div>
         </div>
