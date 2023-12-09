@@ -22,7 +22,7 @@ const Checkout = () => {
   };
 
   const shop = () => {
-    navigate("/shop");
+    navigate("/cart");
     windowScrollToTop();
   };
 
@@ -128,7 +128,7 @@ const Checkout = () => {
             ))}
             <div className="back">
               <button className="back-to-cart" onClick={shop}>
-                <i class="fa-solid fa-chevron-left"></i> CONTINUE SHOPPING
+                <i class="fa-solid fa-chevron-left"></i> BACK TO CART
               </button>
             </div>
           </div>

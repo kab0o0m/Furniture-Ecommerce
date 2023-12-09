@@ -30,10 +30,11 @@ const Wishlist = () => {
       </div>
 
       {/* Body */}
-      {/* Body */}
-      <div className="wishlist-body">
-        {/* Display wishlist-header */}
-        {wishlistItems.length > 0 && (
+      {/* If wishlist > 0 */}
+      {wishlistItems.length > 0 && (
+        <div className="wishlist-body">
+          {/* Display wishlist-header */}
+
           <div className="wishlist-display-header">
             <div className="wishlist-display-img-header">Image</div>
             <div className="wishlist-display-title-header">Product</div>
@@ -41,11 +42,10 @@ const Wishlist = () => {
             <div className="wishlist-display-discount-header">Discount</div>
             <div className="wishlist-display-remove-header">Remove</div>
           </div>
-        )}
 
-        {/* Display wishlist-body */}
-        {wishlistItems.length > 0 &&
-          wishlistItems.map((item) => (
+          {/* Display wishlist-body */}
+
+          {wishlistItems.map((item) => (
             <div key={item.id} className="wishlist-display-body">
               <div className="wishlist-display-img">
                 <img src={item.image} alt="" className="card-img-small" />
@@ -60,7 +60,23 @@ const Wishlist = () => {
               </div>
             </div>
           ))}
-      </div>
+        </div>
+      )}
+
+      {/* if no items in wishlist */}
+      {wishlistItems.length <= 0 && (
+        <div className="no-cart">
+          <h1>Your Wishlist is Empty :(</h1>
+          <span>
+            Add items to wishlist
+            <Link to="/shop" className="no-cart-link">
+              {" "}
+              here
+            </Link>
+            !
+          </span>
+        </div>
+      )}
     </div>
   );
 };
