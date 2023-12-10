@@ -56,7 +56,7 @@
 }
 
 .new-arrivals-title,
-.latest-blog-title{
+.latest-reviews-title{
   font-size: 2rem;
   font-weight: bold;
   margin: 0 0 1rem 0;
@@ -65,7 +65,7 @@
 }
 
 .new-arrivals-description,
-.latest-blog-description {
+.latest-reviews-description {
   font-size: 1rem;
   color: #292929;
   margin: 0 0 2rem 0;
@@ -148,89 +148,18 @@
   margin-left: 4rem;
 }
 
-
-.latest-blog {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.latest-blog-display {
-  display: flex;
-  gap: 5rem;
-}
-
-.latest-blog-1-description-1,
-.latest-blog-2-description-1,
-.latest-blog-3-description-1{
-  opacity: 0.5;
-  padding: 0.5rem 0;
-  font-size: 0.8rem;
-}
-
-.latest-blog-1-description-2,
-.latest-blog-2-description-2,
-.latest-blog-3-description-2{
-  padding: 0 0 0.5rem 0;
-}
-
-.latest-blog-1-img {
-  background-image: url(../../../public/Images/Blog1.webp); 
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 20rem; 
-  height: 10rem;
-}
-
-.latest-blog-2-img {
-  background-image: url(../../../public/Images/Blog2.webp); 
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 20rem;
-  height: 10rem;
-}
-
-.latest-blog-3-img {
-  background-image: url(../../../public/Images/Blog3.webp); 
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 20rem;
-  height: 10rem;
-}
-
-.latest-blog-1-img,
-.latest-blog-2-img,
-.latest-blog-3-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.latest-blog-button {
-  padding: 1rem 2rem 1rem 2rem;
-  border: none;
-  display: none;
-}
-
-.latest-blog-1-img:hover,
-.latest-blog-2-img:hover,
-.latest-blog-3-img:hover {
-  filter:brightness(70%);
-  cursor: pointer;
-}
-
-.latest-blog-1-img:hover .latest-blog-button,
-.latest-blog-2-img:hover .latest-blog-button,
-.latest-blog-3-img:hover .latest-blog-button{
-  display: block;
-  cursor: pointer;
-}
-
 .shop-now-button:hover,
 .best-sale button:hover {
   cursor: pointer;
   background-color: #FF7F00;
   transition: 0.3s;
+}
+
+.latest-reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .popup {
@@ -265,6 +194,35 @@
     opacity: 1;
   }
 }
+
+.latest-reviews-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.individual-display {
+  display: flex;
+  align-items: center;
+}
+
+.review-left img{
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  background-color: #c3c3c3;
+  border-radius: 50%;
+}
+
+.review-right {
+  width: 15rem;
+}
+
+.review-name {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 
 

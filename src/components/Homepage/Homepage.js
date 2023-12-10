@@ -2,6 +2,7 @@ import "./Homepage.css";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import IMAGES from "../../Images.js";
+import REVIEWS from "../../Reviews";
 import { useState, useContext } from "react";
 import { getWishlist, setWishlist } from "../../Wishlist";
 import { UserContext } from "../../App";
@@ -287,59 +288,34 @@ const Homepage = () => {
         </div>
       )}
 
-      {/* Latest Blog */}
-      <div className="latest-blog">
-        <p className="latest-blog-title">LATEST BLOG</p>
-        <p className="latest-blog-description">
-          From envelope clutches and slouchy totes to structured shoulder bags
-          and stylish handbags
+      {/* Latest Reviews */}
+      <div className="latest-reviews">
+        <p className="latest-reviews-title">Latest Reviews</p>
+
+        <p className="latest-reviews-description">
+          Comments given by previous users
         </p>
-        <div className="latest-blog-display">
-          <div className="latest-blog-1">
-            <div className="latest-blog-1-img">
-              <button className="latest-blog-button" onClick={readMore}>
-                Read More
-              </button>
-            </div>
-            <div className="latest-blog-1-description">
-              <p className="latest-blog-1-description-1">
-                Furnir Admin, 17 Jul 2018
-              </p>
-              <p className="latest-blog-1-description-2">
-                It is a long established fact that a reader will
-              </p>
-            </div>
-          </div>
-          <div className="latest-blog-2">
-            <div className="latest-blog-2-img">
-              <button className="latest-blog-button" onClick={readMore}>
-                Read More
-              </button>
-            </div>
-            <div className="latest-blog-2-description">
-              <p className="latest-blog-2-description-1">
-                Furnir Admin, 17 Jul 2018
-              </p>
-              <p className="latest-blog-2-description-2">
-                It is a long established fact that a reader will
-              </p>
-            </div>
-          </div>
-          <div className="latest-blog-3">
-            <div className="latest-blog-3-img">
-              <button className="latest-blog-button" onClick={readMore}>
-                Read More
-              </button>
-            </div>
-            <div className="latest-blog-3-description">
-              <p className="latest-blog-3-description-1">
-                Furnir Admin, 17 Jul 2018
-              </p>
-              <p className="latest-blog-3-description-2">
-                It is a long established fact that a reader will
-              </p>
-            </div>
-          </div>
+
+        {/* Individual Reviews */}
+        <div className="latest-reviews-display">
+          {REVIEWS.map((item) => {
+            return (
+              <div key={item.id} className="individual-display">
+                <div className="review-left">
+                  <img src={item.img} alt="" />
+                </div>
+                <div className="review-right">
+                  <div className="review-name">
+                    <p>{item.name}</p>
+                    <p className="review-date">{item.date}</p>
+                    <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                  </div>
+
+                  <p className="review-description">{item.description}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

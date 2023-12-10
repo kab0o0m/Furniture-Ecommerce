@@ -47,9 +47,6 @@ function Nav() {
           <Link to="/shop">Shop</Link>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
-        </li>
-        <li>
           <Link to="/wishlist">Wishlist</Link>
         </li>
         <li>
