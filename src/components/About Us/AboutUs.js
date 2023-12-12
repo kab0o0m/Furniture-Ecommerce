@@ -39,12 +39,6 @@ const AboutUs = () => {
           <p></p>
         </div>
       </div>
-      {/* Meet Our Team */}
-      <div className="meet-team">
-        <h1>Meet Our Team</h1>
-        <p>Meet the Furvo team, where creativity meets craftsmanship.</p>
-        <div className="meet-team-info"></div>
-      </div>
     </div>
   );
 };
