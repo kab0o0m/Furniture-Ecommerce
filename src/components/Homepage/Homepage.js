@@ -11,8 +11,9 @@ import { getCheckoutList, setCheckoutList } from "../../CheckoutList";
 const Homepage = () => {
   const [isWishlistPopup, setIsWishlistPopup] = useState(false);
   const [wishlistItems, setWishlistItems] = useState(getWishlist);
-  const { cartCount, setCartCount } = useContext(UserContext);
-  const [checkoutItems, setCheckoutItems] = useState(getCheckoutList);
+  const { cartCount, setCartCount, cartList, setCartList } =
+    useContext(UserContext);
+
   const [isAddToCartPopup, setIsAddToCartPopup] = useState(false);
   const [isEyePopup, setIsEyePopup] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -83,8 +84,8 @@ const Homepage = () => {
     }, 2000);
   };
   const addToShoppingCart = (item) => {
-    setCheckoutItems((checkoutItems) => {
-      let updatedCheckoutList = [...checkoutItems];
+    setCartList((cartList) => {
+      let updatedCheckoutList = [...cartList];
 
       const existingItem = updatedCheckoutList.find(
         (checkoutItem) => checkoutItem.id === item.id
@@ -114,7 +115,7 @@ const Homepage = () => {
     });
   };
   const isInCart = (item) => {
-    return checkoutItems.find((checkoutItem) => checkoutItem.id === item.id);
+    return cartList.find((checkoutItem) => checkoutItem.id === item.id);
   };
 
   return (
@@ -305,9 +306,10 @@ const Homepage = () => {
                   <img src={item.img} alt="" />
                 </div>
                 <div className="review-right">
-                  <div className="review-name">
-                    <p>{item.name}</p>
-                    <p className="review-date">{item.date}</p>
+                  <div className="review">
+                    <p className="review-name">
+                      {item.name} {item.date}
+                    </p>
                     <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
                   </div>
 

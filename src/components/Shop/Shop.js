@@ -14,7 +14,6 @@ const Shop = () => {
   const [currentLayout, setCurrentLayout] = useState("shop-display-grid");
   const [currentCardLayout, setCurrentCardLayout] = useState("card-column");
   const [imageSize, setImageSize] = useState("card-img-large");
-  const [checkoutItems, setCheckoutItems] = useState(getCheckoutList);
   const [isAddToCartPopup, setIsAddToCartPopup] = useState(false);
   const [isEyePopup, setIsEyePopup] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -24,7 +23,8 @@ const Shop = () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = currentPage * itemsPerPage;
   const filteredItems = IMAGES.slice(startIndex, endIndex);
-  const { cartCount, setCartCount } = useContext(UserContext);
+  const { cartCount, setCartCount, cartList, setCartList } =
+    useContext(UserContext);
 
   const isPageSelected = (pageNumber) => currentPage === pageNumber;
 
@@ -45,8 +45,8 @@ const Shop = () => {
     }, 2000);
   };
   const addToShoppingCart = (item) => {
-    setCheckoutItems((checkoutItems) => {
-      let updatedCheckoutList = [...checkoutItems];
+    setCartList((cartList) => {
+      let updatedCheckoutList = [...cartList];
 
       const existingItem = updatedCheckoutList.find(
         (checkoutItem) => checkoutItem.id === item.id
@@ -134,7 +134,7 @@ const Shop = () => {
   };
 
   const isInCart = (item) => {
-    return checkoutItems.find((checkoutItem) => checkoutItem.id === item.id);
+    return cartList.find((checkoutItem) => checkoutItem.id === item.id);
   };
 
   return (
@@ -183,7 +183,7 @@ const Shop = () => {
           return (
             <div key={item.id} className={currentCardLayout}>
               <div className="card-img">
-                <img src={item.image} className={imageSize} />
+                <img src={item.image} className={imageSize} alt="furniture" />
               </div>
               <div className="card-info-description">
                 <p className="card-info-1">{item.title}</p>

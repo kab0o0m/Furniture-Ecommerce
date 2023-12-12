@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import Wishlist from "./components/Wishlist/Wishlist";
 import Checkout from "./components/Checkout/Checkout";
 import Cart from "./components/Cart/Cart";
+import Account from "./components/Account/Account";
 import { createContext, useState } from "react";
 import { getCheckoutList, setCheckoutList } from "./CheckoutList";
 
@@ -17,10 +18,13 @@ function App() {
   const [cartCount, setCartCount] = useState(() =>
     getCheckoutList().reduce((total, item) => total + item.quantity, 0)
   );
+  const [cartList, setCartList] = useState(getCheckoutList());
 
   return (
     <Router>
-      <UserContext.Provider value={{ cartCount, setCartCount }}>
+      <UserContext.Provider
+        value={{ cartCount, setCartCount, cartList, setCartList }}
+      >
         <Navigation />
         <div className="content">
           <Routes>
@@ -31,6 +35,7 @@ function App() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/account" element={<Account />} />
           </Routes>
         </div>
         <Footer />

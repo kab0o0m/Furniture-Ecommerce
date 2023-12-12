@@ -215,12 +215,20 @@
 }
 
 .review-right {
-  width: 15rem;
+  width: 20rem;
+}
+
+.review {
+  display: flex;
+  justify-content: space-between;
 }
 
 .review-name {
-  display: flex;
-  justify-content: space-between;
+  width: 15rem;
+}
+
+.review-description {
+  opacity: 0.7;
 }
 
 
