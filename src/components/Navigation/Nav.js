@@ -77,17 +77,17 @@ function Nav() {
   };
 
   const cart = () => {
-    navigate("/Furniture-Ecommerce-Website/cart");
+    navigate("/cart");
     windowScrollToTop();
   };
 
   const search = () => {
-    navigate("/Furniture-Ecommerce-Website/search");
+    navigate("/search");
     windowScrollToTop();
   };
   return (
     <nav>
-      <Link to="/Furniture-Ecommerce-Website/" className="site-title">
+      <Link to="/" className="site-title">
         Furvo
       </Link>
       <ul
@@ -95,19 +95,19 @@ function Nav() {
         className={`${isOpen ? "#subnavbar active" : "#subnavbar"}`}
       >
         <li>
-          <Link to="/Furniture-Ecommerce-Website/">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/Furniture-Ecommerce-Website/shop">Shop</Link>
+          <Link to="/shop">Shop</Link>
         </li>
         <li>
-          <Link to="/Furniture-Ecommerce-Website/wishlist">Wishlist</Link>
+          <Link to="/wishlist">Wishlist</Link>
         </li>
         <li>
-          <Link to="/Furniture-Ecommerce-Website/about">About Us</Link>
+          <Link to="/about">About Us</Link>
         </li>
         <li>
-          <Link to="/Furniture-Ecommerce-Website/contact">Contact Us</Link>
+          <Link to="/contact">Contact Us</Link>
         </li>
       </ul>
       <div className="menu-right">
@@ -124,19 +124,19 @@ function Nav() {
         >
           <ul>
             <li>
-              <Link to="/Furniture-Ecommerce-Website/account">Login</Link>
+              <Link to="/account">Login</Link>
             </li>
             <li>
-              <Link to="/Furniture-Ecommerce-Website/account">Account</Link>
+              <Link to="/account">Account</Link>
             </li>
             <li>
-              <Link to="/Furniture-Ecommerce-Website/wishlist">Wishlist</Link>
+              <Link to="/wishlist">Wishlist</Link>
             </li>
             <li>
-              <Link to="/Furniture-Ecommerce-Website/checkout">Checkout</Link>
+              <Link to="/checkout">Checkout</Link>
             </li>
             <li>
-              <Link to="/Furniture-Ecommerce-Website/cart">My Order</Link>
+              <Link to="/cart">My Order</Link>
             </li>
           </ul>
         </div>
