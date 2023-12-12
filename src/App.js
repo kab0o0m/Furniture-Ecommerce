@@ -10,6 +10,8 @@ import Checkout from "./components/Checkout/Checkout";
 import Cart from "./components/Cart/Cart";
 import Account from "./components/Account/Account";
 import Search from "./components/Search/Search";
+import Privacy from "./components/Privacy/Privacy";
+import Tnc from "./components/TNC/TNC";
 import { createContext, useState } from "react";
 import { getCheckoutList, setCheckoutList } from "./CheckoutList";
 
@@ -38,6 +40,8 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/account" element={<Account />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/tnc" element={<Tnc />} />
           </Routes>
         </div>
         <Footer />

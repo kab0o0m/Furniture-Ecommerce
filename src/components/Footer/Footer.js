@@ -36,20 +36,20 @@ const Footer = () => {
       {/* Quick Links */}
       <div className="quick-links">
         <h3>QUICK LINKS</h3>
-        <Link to="/">About</Link>
-        <Link to="/">Delivery Information</Link>
-        <Link to="/">Privacy Policy</Link>
-        <Link to="/">Terms & Conditions</Link>
-        <Link to="/">Best Selling Products</Link>
+        <Link to="/about">About</Link>
+        <Link to="/delivery">Delivery Information</Link>
+        <Link to="/privacy">Privacy Policy</Link>
+        <Link to="/tnc">Terms & Conditions</Link>
+        <Link to="/shop">Best Selling Products</Link>
       </div>
       {/* Accounts */}
       <div className="accounts">
         <h3>ACCOUNTS</h3>
-        <Link to="/">My Account</Link>
-        <Link to="/">Wishlist</Link>
-        <Link to="/">My Order</Link>
-        <Link to="/">Checkout</Link>
-        <Link to="/">My Address</Link>
+        <Link to="/account">My Account</Link>
+        <Link to="/wishlist">Wishlist</Link>
+        <Link to="/cart">My Order</Link>
+        <Link to="/checkout">Checkout</Link>
+        <Link to="/account">My Address</Link>
       </div>
       {/* Newsletter */}
       <div className="newsletter">
