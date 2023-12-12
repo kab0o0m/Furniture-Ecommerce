@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Furniture-Ecommerce-Website/static/css/main.506d1263.css",
-    "main.js": "/Furniture-Ecommerce-Website/static/js/main.bf017596.js",
+    "main.js": "/Furniture-Ecommerce-Website/static/js/main.65fc7ca8.js",
     "static/media/Homepage-2.webp": "/Furniture-Ecommerce-Website/static/media/Homepage-2.bc95efbcd04f22041a66.webp",
     "static/media/AboutUs.webp": "/Furniture-Ecommerce-Website/static/media/AboutUs.9aee45f3ca813171ebe7.webp",
     "static/media/Homepage-1.webp": "/Furniture-Ecommerce-Website/static/media/Homepage-1.a3f4f4de1d962236763d.webp",
     "index.html": "/Furniture-Ecommerce-Website/index.html",
     "main.506d1263.css.map": "/Furniture-Ecommerce-Website/static/css/main.506d1263.css.map",
-    "main.bf017596.js.map": "/Furniture-Ecommerce-Website/static/js/main.bf017596.js.map"
+    "main.65fc7ca8.js.map": "/Furniture-Ecommerce-Website/static/js/main.65fc7ca8.js.map"
   },
   "entrypoints": [
     "static/css/main.506d1263.css",
-    "static/js/main.bf017596.js"
+    "static/js/main.65fc7ca8.js"
   ]
 }
