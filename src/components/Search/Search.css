@@ -1,4 +1,4 @@
-.account {
+.search {
   font-family: Roboto;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.account-header{
+.search-header{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,11 +17,11 @@
   margin: 0 0 5rem 0;
 }
 
-.account-header a{
+.search-header a{
   text-decoration: none;
   color: #303030;
 }
 
-.account-header-page p{
+.search-header-page p{
   opacity: 0.5;
 }

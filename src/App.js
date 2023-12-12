@@ -9,6 +9,7 @@ import Wishlist from "./components/Wishlist/Wishlist";
 import Checkout from "./components/Checkout/Checkout";
 import Cart from "./components/Cart/Cart";
 import Account from "./components/Account/Account";
+import Search from "./components/Search/Search";
 import { createContext, useState } from "react";
 import { getCheckoutList, setCheckoutList } from "./CheckoutList";
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </div>
         <Footer />

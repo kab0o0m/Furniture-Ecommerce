@@ -81,6 +81,10 @@ function Nav() {
     windowScrollToTop();
   };
 
+  const search = () => {
+    navigate("/search");
+    windowScrollToTop();
+  };
   return (
     <nav>
       <Link to="/" className="site-title">
@@ -107,7 +111,7 @@ function Nav() {
         </li>
       </ul>
       <div className="menu-right">
-        <button className="search-icon">
+        <button className="search-icon" onClick={() => search()}>
           <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
         </button>
         <button className="settings-icon" onClick={() => settingsDropdown()}>
