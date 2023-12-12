@@ -122,9 +122,9 @@
   overflow: hidden;
 }
 
-.homepage .add-to-wishlist,
-.homepage .preview,
-.homepage .add-to-cart{
+.add-to-wishlist,
+.preview,
+.add-to-cart{
   width: 100%;
   height: 100%;
   background-color: #FFFFFF;

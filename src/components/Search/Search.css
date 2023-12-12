@@ -25,3 +25,35 @@
 .search-header-page p{
   opacity: 0.5;
 }
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-input-box {
+  padding: 1rem;
+  width: 50rem;
+}
+
+.search-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-button {
+  width: 10rem;
+  padding: 0.5rem;
+  background-color: #313131;
+  color: #FFFFFF;
+  border: none;
+  margin: 1rem;
+}
+
+.search-button:hover {
+  background-color: #FF7F00;
+  cursor: pointer;
+}
