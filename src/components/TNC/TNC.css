@@ -1,0 +1,19 @@
+.tnc {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  align-items: start;
+}
+
+.tnc h1 {
+  padding: 1rem;
+}
+
+.tnc ul {
+  margin: 0 0 0 4rem;
+}
+
+.tnc p {
+  padding: 1rem;
+}
+
