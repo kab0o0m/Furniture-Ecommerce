@@ -22,7 +22,29 @@ const Shop = () => {
   const totalPages = Math.ceil(IMAGES.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = currentPage * itemsPerPage;
-  const filteredItems = IMAGES.slice(startIndex, endIndex);
+  const sortItems = () => {
+    let sortedItems = [...IMAGES];
+    switch (selectedOption) {
+      case "Alphabetically, A-Z":
+        sortedItems.sort((a, b) => a.title.localeCompare(b.title));
+        break;
+      case "Alphabetically, Z-A":
+        sortedItems.sort((a, b) => b.title.localeCompare(a.title));
+        break;
+      case "Price, low to high":
+        sortedItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+        break;
+      case "Price, high to low":
+        sortedItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+        break;
+      default:
+        // No sorting
+        break;
+    }
+    // Return the sorted array
+    return sortedItems;
+  };
+  const filteredItems = sortItems().slice(startIndex, endIndex);
   const { cartCount, setCartCount, cartList, setCartList } =
     useContext(UserContext);
 
@@ -44,6 +66,7 @@ const Shop = () => {
       setIsAddToCartPopup(false);
     }, 2000);
   };
+
   const addToShoppingCart = (item) => {
     setCartList((cartList) => {
       let updatedCheckoutList = [...cartList];
@@ -83,8 +106,6 @@ const Shop = () => {
   };
 
   const options = [
-    "Featured",
-    "Best Selling",
     "Alphabetically, A-Z",
     "Alphabetically, Z-A",
     "Price, low to high",
