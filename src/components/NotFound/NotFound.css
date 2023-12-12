@@ -1,0 +1,14 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem;
+}
+
+.not-found p{
+  color: #313131;
+}
+
+.not-found a {
+  text-decoration: none;
+  color: #FF7E03;
+}

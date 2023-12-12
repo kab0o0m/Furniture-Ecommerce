@@ -67,14 +67,20 @@ nav div button i {
 } 
 
 .settings-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
   position: absolute;
   background-color: #FFFFFF;
+  padding: 1rem;
   top: 7rem;
   right: 6rem;
   height: 8rem;
+  width: 5.5rem;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  border-radius: 1rem;
   box-shadow: 0px -2px 12px 0px rgba(135,135,135,0.75);
   -webkit-box-shadow: 0px -2px 12px 0px rgba(135,135,135,0.75);
   -moz-box-shadow: 0px -2px 12px 0px rgba(135,135,135,0.75);
@@ -92,11 +98,12 @@ nav div button i {
   font-size: 1rem;
   padding: 1rem;
   font-size: 0.7rem;
+  transition: 0.3s ease-in-out;
 }
 
 .settings-popup a:hover {
   color:#FF7E03;
-  transform: translateX(0.5rem);
+  margin-left: 0.5rem;
 }
 
 
@@ -121,9 +128,17 @@ nav div button i {
   width: 15rem;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   z-index: 999;
+  border-radius: 1rem;
   box-shadow: 0px -2px 12px 0px rgba(135,135,135,0.75);
   -webkit-box-shadow: 0px -2px 12px 0px rgba(135,135,135,0.75);
   -moz-box-shadow: 0px -2px 12px 0px rgba(135,135,135,0.75);
+
+}
+
+.nav-cart-dropdown h3{
+  margin: 0;
+  padding: 1rem 0 0 0;
+  border-bottom: 1px solid #F2F2F2;
 }
 
 .nav-cart-display-body {
@@ -134,7 +149,9 @@ nav div button i {
 }
 
 .nav-cart-display-img img {
-  width: 5rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 10%;
 }
 
 .nav-cart-display-right {
@@ -156,6 +173,7 @@ nav div button i {
   color: #FFFFFF;
   border: none;
   margin-bottom: 1rem;
+  border-radius: 0.3rem;
 }
 
 .nav-cart-button:hover {

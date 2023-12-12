@@ -127,7 +127,7 @@ function Nav() {
               <Link to="/account">Login</Link>
             </li>
             <li>
-              <Link to="/account">My Account</Link>
+              <Link to="/account">Account</Link>
             </li>
             <li>
               <Link to="/wishlist">Wishlist</Link>
@@ -145,41 +145,43 @@ function Nav() {
           <i className="fa-solid fa-cart-shopping"></i>
           <div className="cart-count">{cartCount}</div>
         </button>
-        <div
-          className={`nav-cart-dropdown ${
-            isCartClick ? "fade-in" : "fade-out"
-          }`}
-        >
-          {cartList.map((item) => (
-            <div key={item.id} className="nav-cart-display-body">
-              <div className="nav-cart-display-img">
-                <img src={item.image} alt="" className="nav-card-img-small" />
-              </div>
-              <div className="nav-cart-display-right">
-                <div className="nav-cart-display-title">{item.title}</div>
-                <div className="nav-cart-display-price">SGD {item.price}</div>
-                <div className="nav-cart-display-quantity">
-                  <div className="nav-minus">
-                    <button onClick={() => handleDecreaseQuantity(item.id)}>
-                      -
-                    </button>
-                  </div>
-                  <div className="nav-quantity">{item.quantity}</div>
-                  <div className="nav-add">
-                    <button onClick={() => handleIncreaseQuantity(item.id)}>
-                      +
-                    </button>
+        {cartCount > 0 && (
+          <div
+            className={`nav-cart-dropdown ${
+              isCartClick ? "fade-in" : "fade-out"
+            }`}
+          >
+            <h3>Shopping Cart</h3>
+            {cartList.map((item) => (
+              <div key={item.id} className="nav-cart-display-body">
+                <div className="nav-cart-display-img">
+                  <img src={item.image} alt="" className="nav-card-img-small" />
+                </div>
+                <div className="nav-cart-display-right">
+                  <div className="nav-cart-display-title">{item.title}</div>
+                  <div className="nav-cart-display-price">SGD {item.price}</div>
+                  <div className="nav-cart-display-quantity">
+                    <div className="nav-minus">
+                      <button onClick={() => handleDecreaseQuantity(item.id)}>
+                        -
+                      </button>
+                    </div>
+                    <div className="nav-quantity">{item.quantity}</div>
+                    <div className="nav-add">
+                      <button onClick={() => handleIncreaseQuantity(item.id)}>
+                        +
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-          {cartCount > 0 && (
+            ))}
             <button className="nav-cart-button" onClick={cart}>
               Go to Cart
             </button>
-          )}
-        </div>
+          </div>
+        )}
+
         <button
           className={`menu-bar ${isOpen ? "" : "menu"}`}
           onClick={toggleMenu}

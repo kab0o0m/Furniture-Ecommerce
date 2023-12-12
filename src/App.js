@@ -14,6 +14,7 @@ import Privacy from "./components/Privacy/Privacy";
 import Tnc from "./components/TNC/TNC";
 import { createContext, useState } from "react";
 import { getCheckoutList, setCheckoutList } from "./CheckoutList";
+import NotFound from "./components/NotFound/NotFound";
 
 export const UserContext = createContext();
 
@@ -42,6 +43,7 @@ function App() {
             <Route path="/search" element={<Search />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/tnc" element={<Tnc />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />
