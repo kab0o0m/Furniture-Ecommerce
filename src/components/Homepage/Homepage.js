@@ -32,10 +32,6 @@ const Homepage = () => {
   const windowScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const readMore = () => {
-    navigate("/blog");
-    windowScrollToTop();
-  };
 
   const shopNow = () => {
     navigate("/shop");
@@ -108,9 +104,7 @@ const Homepage = () => {
       addToCartPopup();
       setCartCount(totalItemsInCart);
       setCheckoutList(updatedCheckoutList);
-
-      console.log(updatedCheckoutList);
-      console.log("Checkout count: " + cartCount);
+      closeEyePopup();
       return updatedCheckoutList;
     });
   };
