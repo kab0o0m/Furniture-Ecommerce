@@ -18,7 +18,7 @@ const REVIEWS = [
     img: "./Images/userIcon3.png",
     name: "Alex Johnson",
     date: "18/12/2023",
-    description: "Beautiful furniture, exceeded my expectations",
+    description: "Beautiful furniture",
   },
 ];
 
