@@ -34,40 +34,46 @@ function App() {
           <Routes>
             <Route
               exact
-              path="Furniture-Ecommerce-Website/"
+              path="/Furniture-Ecommerce-Website/"
               element={<Homepage />}
             />
-            <Route path="Furniture-Ecommerce-Website/shop" element={<Shop />} />
             <Route
-              path="Furniture-Ecommerce-Website/about"
+              path="/Furniture-Ecommerce-Website/shop"
+              element={<Shop />}
+            />
+            <Route
+              path="/Furniture-Ecommerce-Website/about"
               element={<AboutUs />}
             />
             <Route
-              path="Furniture-Ecommerce-Website/contact"
+              path="/Furniture-Ecommerce-Website/contact"
               element={<ContactUs />}
             />
             <Route
-              path="Furniture-Ecommerce-Website/wishlist"
+              path="/Furniture-Ecommerce-Website/wishlist"
               element={<Wishlist />}
             />
-            <Route path="Furniture-Ecommerce-Website/cart" element={<Cart />} />
             <Route
-              path="Furniture-Ecommerce-Website/checkout"
+              path="/Furniture-Ecommerce-Website/cart"
+              element={<Cart />}
+            />
+            <Route
+              path="/Furniture-Ecommerce-Website/checkout"
               element={<Checkout />}
             />
             <Route
-              path="Furniture-Ecommerce-Website/account"
+              path="/Furniture-Ecommerce-Website/account"
               element={<Account />}
             />
             <Route
-              path="Furniture-Ecommerce-Website/search"
+              path="/Furniture-Ecommerce-Website/search"
               element={<Search />}
             />
             <Route
-              path="Furniture-Ecommerce-Website/privacy"
+              path="/Furniture-Ecommerce-Website/privacy"
               element={<Privacy />}
             />
-            <Route path="Furniture-Ecommerce-Website/tnc" element={<Tnc />} />
+            <Route path="/Furniture-Ecommerce-Website/tnc" element={<Tnc />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
