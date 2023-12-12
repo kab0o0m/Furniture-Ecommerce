@@ -25,55 +25,24 @@ function App() {
   const [cartList, setCartList] = useState(getCheckoutList());
 
   return (
-    <Router>
+    <Router basename="/Furniture-Ecommerce-Website">
       <UserContext.Provider
         value={{ cartCount, setCartCount, cartList, setCartList }}
       >
         <Navigation />
         <div className="content">
           <Routes>
-            <Route
-              exact
-              path="/Furniture-Ecommerce-Website/"
-              element={<Homepage />}
-            />
-            <Route
-              path="/Furniture-Ecommerce-Website/shop"
-              element={<Shop />}
-            />
-            <Route
-              path="/Furniture-Ecommerce-Website/about"
-              element={<AboutUs />}
-            />
-            <Route
-              path="/Furniture-Ecommerce-Website/contact"
-              element={<ContactUs />}
-            />
-            <Route
-              path="/Furniture-Ecommerce-Website/wishlist"
-              element={<Wishlist />}
-            />
-            <Route
-              path="/Furniture-Ecommerce-Website/cart"
-              element={<Cart />}
-            />
-            <Route
-              path="/Furniture-Ecommerce-Website/checkout"
-              element={<Checkout />}
-            />
-            <Route
-              path="/Furniture-Ecommerce-Website/account"
-              element={<Account />}
-            />
-            <Route
-              path="/Furniture-Ecommerce-Website/search"
-              element={<Search />}
-            />
-            <Route
-              path="/Furniture-Ecommerce-Website/privacy"
-              element={<Privacy />}
-            />
-            <Route path="/Furniture-Ecommerce-Website/tnc" element={<Tnc />} />
+            <Route exact path="/" element={<Homepage />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/tnc" element={<Tnc />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

@@ -50,7 +50,7 @@ const Checkout = () => {
     <div className="checkout">
       {/* Header */}
       <div className="checkout-header">
-        <Link to="/">Home</Link>
+        <Link to="/Furniture-Ecommerce-Website/">Home</Link>
         <div>/</div>
         <div className="checkout-header-page">
           <p>Checkout</p>
@@ -168,7 +168,10 @@ const Checkout = () => {
           <h1>Your Cart is Empty :(</h1>
           <span>
             Continue browsing
-            <Link to="/shop" className="no-cart-link">
+            <Link
+              to="/Furniture-Ecommerce-Website/shop"
+              className="no-cart-link"
+            >
               {" "}
               here{" "}
             </Link>

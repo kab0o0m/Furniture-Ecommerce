@@ -71,7 +71,7 @@ const Cart = () => {
     <div className="cart">
       {/* Header */}
       <div className="cart-header">
-        <Link to="/">Home</Link>
+        <Link to="/Furniture-Ecommerce-Website/">Home</Link>
         <div>/</div>
         <div className="shop-header-page">
           <p>Shopping Cart</p>
@@ -163,7 +163,10 @@ const Cart = () => {
           <h1>Your Cart is Empty :(</h1>
           <span>
             Continue browsing
-            <Link to="/shop" className="no-cart-link">
+            <Link
+              to="/Furniture-Ecommerce-Website/shop"
+              className="no-cart-link"
+            >
               {" "}
               here{" "}
             </Link>

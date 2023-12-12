@@ -1,11 +1,12 @@
 import "./Account.css";
+import { Link } from "react-router-dom";
 
 const Account = () => {
   return (
     <div className="account">
       {/* Header */}
       <div className="account-header">
-        <a href="/">Home</a>
+        <Link href="/Furniture-Ecommerce-Website/">Home</Link>
         <div>/</div>
         <div className="account-header-page">
           <p>Account</p>

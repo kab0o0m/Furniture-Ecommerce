@@ -6,7 +6,7 @@ const ContactUs = () => {
     <div className="contact-us">
       {/* Header */}
       <div className="contact-us-header">
-        <Link to="/">Home</Link>
+        <Link to="/Furniture-Ecommerce-Website/">Home</Link>
         <div>/</div>
         <div className="contact-us-header-page">
           <p>Contact</p>

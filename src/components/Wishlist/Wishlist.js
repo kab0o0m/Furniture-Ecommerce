@@ -22,7 +22,7 @@ const Wishlist = () => {
     <div className="wishlist">
       {/* Header */}
       <div className="wishlist-header">
-        <Link to="/">Home</Link>
+        <Link to="/Furniture-Ecommerce-Website/">Home</Link>
         <div>/</div>
         <div className="shop-header-page">
           <p>WishList</p>
@@ -69,7 +69,10 @@ const Wishlist = () => {
           <h1>Your Wishlist is Empty :(</h1>
           <span>
             Add items to wishlist
-            <Link to="/shop" className="no-cart-link">
+            <Link
+              to="/Furniture-Ecommerce-Website/shop"
+              className="no-cart-link"
+            >
               {" "}
               here
             </Link>

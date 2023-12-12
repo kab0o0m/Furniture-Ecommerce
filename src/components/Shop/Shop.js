@@ -5,6 +5,7 @@ import { getWishlist, setWishlist } from "../../Wishlist";
 import { getCheckoutList, setCheckoutList } from "../../CheckoutList";
 import { UserContext } from "../../App";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [selectedOption, setSelectedOption] = useState("Select an option");
@@ -162,7 +163,7 @@ const Shop = () => {
     <div className="shop">
       {/* Header */}
       <div className="shop-header">
-        <a href="/">Home</a>
+        <Link href="/Furniture-Ecommerce-Website/">Home</Link>
         <div>/</div>
         <div className="shop-header-page">
           <p>Products</p>
