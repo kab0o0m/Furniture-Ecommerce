@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer">
       {/* Description */}
       <div className="footer-description">
-        <Link to="/" className="footer-title">
+        <Link to="/Furniture-Ecommerce-Website/" className="footer-title">
           Furvo
         </Link>
         <p>
@@ -16,19 +16,19 @@ const Footer = () => {
           rustic.
         </p>
         <div className="footer-icons">
-          <Link to="/">
+          <Link to="/Furniture-Ecommerce-Website/">
             <i className="fa-brands fa-facebook"></i>
           </Link>
-          <Link to="/">
+          <Link to="/Furniture-Ecommerce-Website/">
             <i className="fa-brands fa-twitter"></i>
           </Link>
-          <Link to="/">
+          <Link to="/Furniture-Ecommerce-Website/">
             <i className="fa-brands fa-google"></i>
           </Link>
-          <Link to="/">
+          <Link to="/Furniture-Ecommerce-Website/">
             <i className="fa-brands fa-linkedin-in"></i>
           </Link>
-          <Link to="/">
+          <Link to="/Furniture-Ecommerce-Website/">
             <i className="fa-brands fa-square-instagram"></i>
           </Link>
         </div>
@@ -36,20 +36,24 @@ const Footer = () => {
       {/* Quick Links */}
       <div className="quick-links">
         <h3>QUICK LINKS</h3>
-        <Link to="/about">About</Link>
-        <Link to="/delivery">Delivery Information</Link>
-        <Link to="/privacy">Privacy Policy</Link>
-        <Link to="/tnc">Terms & Conditions</Link>
-        <Link to="/shop">Best Selling Products</Link>
+        <Link to="/Furniture-Ecommerce-Website/about">About</Link>
+        <Link to="/Furniture-Ecommerce-Website/delivery">
+          Delivery Information
+        </Link>
+        <Link to="/Furniture-Ecommerce-Website/privacy">Privacy Policy</Link>
+        <Link to="/Furniture-Ecommerce-Website/tnc">Terms & Conditions</Link>
+        <Link to="/Furniture-Ecommerce-Website/shop">
+          Best Selling Products
+        </Link>
       </div>
       {/* Accounts */}
       <div className="accounts">
         <h3>ACCOUNTS</h3>
-        <Link to="/account">My Account</Link>
-        <Link to="/wishlist">Wishlist</Link>
-        <Link to="/cart">My Order</Link>
-        <Link to="/checkout">Checkout</Link>
-        <Link to="/account">My Address</Link>
+        <Link to="/Furniture-Ecommerce-Website/account">My Account</Link>
+        <Link to="/Furniture-Ecommerce-Website/wishlist">Wishlist</Link>
+        <Link to="/Furniture-Ecommerce-Website/cart">My Order</Link>
+        <Link to="/Furniture-Ecommerce-Website/checkout">Checkout</Link>
+        <Link to="/Furniture-Ecommerce-Website/account">My Address</Link>
       </div>
       {/* Newsletter */}
       <div className="newsletter">
