@@ -7,7 +7,7 @@ const NotFound = () => {
       <h1>404 - Not Found</h1>
       <p>Sorry, the page you are looking for does not exist.</p>
       <p>
-        Click <Link to="/">here</Link> to shop Furvo
+        Click <Link to="/Furniture-Ecommerce-Website/">here</Link> to shop Furvo
       </p>
     </div>
   );

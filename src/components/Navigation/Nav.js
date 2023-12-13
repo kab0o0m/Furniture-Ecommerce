@@ -87,7 +87,7 @@ function Nav() {
   };
   return (
     <nav>
-      <Link to="/" className="site-title">
+      <Link to="/Furniture-Ecommerce-Website/" className="site-title">
         Furvo
       </Link>
       <ul

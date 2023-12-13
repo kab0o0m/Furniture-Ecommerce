@@ -34,7 +34,7 @@ const Homepage = () => {
   };
 
   const shopNow = () => {
-    navigate("/shop");
+    navigate("/Furniture-Ecommerce-Website/shop");
     windowScrollToTop();
   };
 
