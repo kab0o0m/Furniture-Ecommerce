@@ -11,12 +11,12 @@ const Cart = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const shop = () => {
-    navigate("/shop");
+    navigate("/Furniture-Ecommerce-Website/shop");
     windowScrollToTop();
   };
 
   const checkOut = () => {
-    navigate("/checkout");
+    navigate("/Furniture-Ecommerce-Website  /checkout");
     windowScrollToTop();
   };
   const [cartList, setCartList] = useState(getCheckoutList());
