@@ -6,7 +6,7 @@ const AboutUs = () => {
     <div className="about-us">
       {/* Header */}
       <div className="about-us-header">
-        <Link to="/">Home</Link>
+        <Link to="/Furniture-Ecommerce-Website/">Home</Link>
         <div>/</div>
         <div className="about-us-header-page">
           <p>About Us</p>
