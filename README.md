@@ -6,20 +6,26 @@ Furvo is an elegantly crafted furniture e-commerce website, meticulously develop
 
 ## Key Features
 
-- **Animation with Motion Library**: Elevate user engagement through smooth and captivating animations, enriching the overall browsing experience.
+- **Animation with Motion Library**:
+  Elevate user engagement through smooth and captivating animations, enriching the overall browsing experience.
 
-- **Wishlist and Cart Functionality**: Empower users to effortlessly create wishlists and manage their shopping carts, ensuring a convenient and personalized shopping journey.
+- **Wishlist and Cart Functionality**:
+  Empower users to effortlessly create wishlists and manage their shopping carts, ensuring a convenient and personalized shopping journey.
 
-- **Product Preview**: Implement a detailed product preview feature, enabling users to gather comprehensive information about each item and make well-informed decisions.
+- **Product Preview**:
+  Implement a detailed product preview feature, enabling users to gather comprehensive information about each item and make well-informed decisions.
 
-- **Interactive and Responsive Design**: Guarantee a user-friendly interface that seamlessly adapts to various devices, delivering a consistent and enjoyable experience across different platforms.
+- **Interactive and Responsive Design**:
+  Guarantee a user-friendly interface that seamlessly adapts to various devices, delivering a consistent and enjoyable experience across different platforms.
+
+- **Filter Functionality**:
+  Enhance the browsing experience with a powerful filter function, allowing users to refine product lists based on specific criteria.
+
+- **Search Functionality**:
+  Implement a search feature that enables users to easily discover products by entering specific keywords or phrases.
 
 ## Disclaimer
 
 The project incorporates images and layouts for inspiration, sourced from the Monster Template.
 
-Additional Note: The project utilizes a local database to store images, descriptions, and prices. The primary focus is on front-end development and deployment. 
-
-## Deployment
-
-https://kab0o0m.github.io/Furniture-Ecommerce-Website/
+Additional Note: The project utilizes a local database to store images, descriptions, and prices. The primary focus is on front-end development and deployment.
