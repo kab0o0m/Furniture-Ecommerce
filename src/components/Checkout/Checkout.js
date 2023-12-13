@@ -24,12 +24,12 @@ const Checkout = () => {
   };
 
   const shop = () => {
-    navigate("/cart");
+    navigate("/Furniture-Ecommerce-Website/cart");
     windowScrollToTop();
   };
 
   const home = () => {
-    navigate("/");
+    navigate("/Furniture-Ecommerce-Website/");
     windowScrollToTop();
   };
 
