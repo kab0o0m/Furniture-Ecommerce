@@ -19,3 +19,7 @@ Furvo is an elegantly crafted furniture e-commerce website, meticulously develop
 The project incorporates images and layouts for inspiration, sourced from the Monster Template.
 
 Additional Note: The project utilizes a local database to store images, descriptions, and prices. The primary focus is on front-end development and deployment. 
+
+## Deployment
+
+https://kab0o0m.github.io/Furniture-Ecommerce-Website/
