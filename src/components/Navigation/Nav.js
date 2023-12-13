@@ -77,12 +77,12 @@ function Nav() {
   };
 
   const cart = () => {
-    navigate("/cart");
+    navigate("/Furniture-Ecommerce-Website/cart");
     windowScrollToTop();
   };
 
   const search = () => {
-    navigate("/search");
+    navigate("/Furniture-Ecommerce-Website/search");
     windowScrollToTop();
   };
   return (
@@ -95,19 +95,19 @@ function Nav() {
         className={`${isOpen ? "#subnavbar active" : "#subnavbar"}`}
       >
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/Furniture-Ecommerce-Website/">Home</Link>
         </li>
         <li>
-          <Link to="/shop">Shop</Link>
+          <Link to="/Furniture-Ecommerce-Website/shop">Shop</Link>
         </li>
         <li>
-          <Link to="/wishlist">Wishlist</Link>
+          <Link to="/Furniture-Ecommerce-Website/wishlist">Wishlist</Link>
         </li>
         <li>
-          <Link to="/about">About Us</Link>
+          <Link to="/Furniture-Ecommerce-Website/about">About Us</Link>
         </li>
         <li>
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/Furniture-Ecommerce-Website/contact">Contact Us</Link>
         </li>
       </ul>
       <div className="menu-right">
@@ -124,19 +124,19 @@ function Nav() {
         >
           <ul>
             <li>
-              <Link to="/account">Login</Link>
+              <Link to="/Furniture-Ecommerce-Website/account">Login</Link>
             </li>
             <li>
-              <Link to="/account">Account</Link>
+              <Link to="/Furniture-Ecommerce-Website/account">Account</Link>
             </li>
             <li>
-              <Link to="/wishlist">Wishlist</Link>
+              <Link to="/Furniture-Ecommerce-Website/wishlist">Wishlist</Link>
             </li>
             <li>
-              <Link to="/checkout">Checkout</Link>
+              <Link to="/Furniture-Ecommerce-Website/checkout">Checkout</Link>
             </li>
             <li>
-              <Link to="/cart">My Order</Link>
+              <Link to="/Furniture-Ecommerce-Website/cart">My Order</Link>
             </li>
           </ul>
         </div>
