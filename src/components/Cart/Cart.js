@@ -16,7 +16,7 @@ const Cart = () => {
   };
 
   const checkOut = () => {
-    navigate("/Furniture-Ecommerce-Website  /checkout");
+    navigate("/Furniture-Ecommerce-Website/checkout");
     windowScrollToTop();
   };
   const [cartList, setCartList] = useState(getCheckoutList());
