@@ -164,12 +164,6 @@ nav div button i {
   align-items: center;
 }
 
-.nav-cart-display-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .nav-cart-display-quantity {
   display: flex;
   align-items: center;
