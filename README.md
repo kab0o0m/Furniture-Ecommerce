@@ -4,6 +4,8 @@
 
 Furvo is an elegantly crafted furniture e-commerce website, meticulously developed with React to provide users with a seamless and visually captivating online shopping experience. This personal project integrates modern features and a user-friendly interface, aiming to showcase a thoughtfully curated collection of exquisite furniture pieces.
 
+https://kab0o0m.github.io/Furniture-Ecommerce-Website/
+
 ## Key Features
 
 - **Animation with Motion Library**:
