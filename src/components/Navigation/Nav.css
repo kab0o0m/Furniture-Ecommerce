@@ -191,7 +191,7 @@ nav div button i {
   }
 
   #subnavbar {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
@@ -209,6 +209,7 @@ nav div button i {
     opacity: 1;
     transition: 0.5s;
     overflow-y: hidden;
+    display:flex;
   }
   
 }
