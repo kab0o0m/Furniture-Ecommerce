@@ -2,6 +2,7 @@ import "./Homepage.css";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import IMAGES from "../../Images.js";
+import HomepageImages from "../../HomepageImages";
 import REVIEWS from "../../Reviews";
 import { useState, useContext } from "react";
 import { getWishlist, setWishlist } from "../../Wishlist";
@@ -17,6 +18,7 @@ const Homepage = () => {
   const [isAddToCartPopup, setIsAddToCartPopup] = useState(false);
   const [isEyePopup, setIsEyePopup] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [itemQuantity, setItemQuantity] = useState(1);
 
   const openEyePopup = (item) => {
     setSelectedItem(item);
@@ -25,6 +27,7 @@ const Homepage = () => {
 
   const closeEyePopup = () => {
     setIsEyePopup(false);
+    setItemQuantity(1);
   };
 
   const navigate = useNavigate();
@@ -79,6 +82,15 @@ const Homepage = () => {
       setIsAddToCartPopup(false);
     }, 2000);
   };
+
+  const handleIncreaseQuantity = () => {
+    setItemQuantity((prev) => prev + 1);
+  };
+
+  const handleDecreaseQuantity = () => {
+    setItemQuantity((prev) => prev + 1);
+  };
+
   const addToShoppingCart = (item) => {
     setCartList((cartList) => {
       let updatedCheckoutList = [...cartList];
@@ -89,10 +101,10 @@ const Homepage = () => {
 
       if (existingItem) {
         // Item already in the cart, update its quantity
-        existingItem.quantity += 1;
+        existingItem.quantity += itemQuantity;
       } else {
         // Item not in the cart, add it with quantity 1
-        const newItem = { ...item, quantity: 1 };
+        const newItem = { ...item, quantity: itemQuantity };
         updatedCheckoutList.push(newItem);
       }
       // Update the cart count based on the total number of items in the cart
@@ -116,52 +128,69 @@ const Homepage = () => {
     <div className="homepage">
       {/* New Arrivals */}
       <div className="homepage-title">
-        <motion.p
-          className="para1"
-          initial={{
-            opacity: 0,
-            translateX: -1000,
-          }}
-          animate={{ opacity: 1, translateX: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-        >
-          NEW ARRIVALS
-        </motion.p>
-        <motion.p
-          className="para2"
-          initial={{
-            opacity: 0,
-            translateX: -1000,
-          }}
-          animate={{ opacity: 1, translateX: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-        >
-          STINGRAY CHAIR
-        </motion.p>
-        <motion.p
-          className="para3"
-          initial={{
-            opacity: 0,
-            translateX: -1000,
-          }}
-          animate={{ opacity: 1, translateX: 0 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        >
-          Furniture can be made using a variety of woodworking joints which
-          often<br></br>reflect the local culture.
-        </motion.p>
-        <motion.button
-          className="shop-now-button"
-          onClick={shopNow}
-          initial={{
-            opacity: 0,
-            translateX: -1000,
-          }}
-          animate={{ opacity: 1, translateX: 0 }}
-          transition={{ duration: 2.5, ease: "easeInOut" }}
-        >
-          SHOP NOW
-        </motion.button>
+        <div className="homepage-title-left">
+          <motion.p
+            className="para1"
+            initial={{
+              opacity: 0,
+              translateX: -1000,
+            }}
+            animate={{ opacity: 1, translateX: 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            NEW ARRIVALS
+          </motion.p>
+          <motion.p
+            className="para2"
+            initial={{
+              opacity: 0,
+              translateX: -1000,
+            }}
+            animate={{ opacity: 1, translateX: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          >
+            STINGRAY CHAIR
+          </motion.p>
+          <motion.p
+            className="para3"
+            initial={{
+              opacity: 0,
+              translateX: -1000,
+            }}
+            animate={{ opacity: 1, translateX: 0 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+          >
+            Furniture can be made using a variety of woodworking joints which
+            often<br></br>reflect the local culture.
+          </motion.p>
+          <motion.button
+            className="shop-now-button"
+            onClick={shopNow}
+            initial={{
+              opacity: 0,
+              translateX: -1000,
+            }}
+            animate={{ opacity: 1, translateX: 0 }}
+            transition={{ duration: 2.5, ease: "easeInOut" }}
+          >
+            SHOP NOW
+          </motion.button>
+        </div>
+        {HomepageImages.filter((item) => item.id === 1).map((item) => {
+          return (
+            <motion.div
+              key={item.id}
+              className="homepage-title-right"
+              initial={{
+                opacity: 0,
+              }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+            >
+              <img src={item.image} alt="" />
+            </motion.div>
+          );
+        })}
       </div>
       <div className="new-arrivals">
         <p className="new-arrivals-title">New Arrivals</p>
@@ -219,11 +248,20 @@ const Homepage = () => {
 
       {/* Best Sale */}
       <div className="best-sale">
-        <p className="para1">BEST SALE PRODUCT</p>
-        <p className="para2">Comfort Surround Chair</p>
-        <button className="shop-now-button" onClick={shopNow}>
-          SHOP NOW
-        </button>
+        <div className="best-sale-left">
+          <p className="para1">BEST SALE PRODUCT</p>
+          <p className="para2">Comfort Surround Chair</p>
+          <button className="shop-now-button" onClick={shopNow}>
+            SHOP NOW
+          </button>
+        </div>
+        {HomepageImages.filter((item) => item.id === 2).map((item) => {
+          return (
+            <div key={item.id} className="best-sale-right">
+              <img src={item.image} alt="" />
+            </div>
+          );
+        })}
       </div>
 
       {/* Popups */}
@@ -258,17 +296,34 @@ const Homepage = () => {
               <p>{selectedItem.description}</p>
             </div>
 
-            <div className="checkout-add-button">
-              <button
-                className="add-button"
-                onClick={() => addToShoppingCart(selectedItem)}
-              >
-                Add to cart
+            <div className="popup-add-to-cart">
+              <div className="checkout-add-button">
+                <button
+                  className="add-button"
+                  onClick={() => addToShoppingCart(selectedItem)}
+                >
+                  Add to cart
+                </button>
+              </div>
+              <button className="close-button" onClick={closeEyePopup}>
+                <i className="fa-solid fa-xmark"></i>
               </button>
+              <div className="quantity-control">
+                <button
+                  className="decrease-button"
+                  onClick={handleDecreaseQuantity}
+                >
+                  -
+                </button>
+                <span>{itemQuantity}</span>
+                <button
+                  className="increase-button"
+                  onClick={handleIncreaseQuantity}
+                >
+                  +
+                </button>
+              </div>
             </div>
-            <button className="close-button" onClick={closeEyePopup}>
-              <i className="fa-solid fa-xmark"></i>
-            </button>
           </div>
         </motion.div>
       )}
