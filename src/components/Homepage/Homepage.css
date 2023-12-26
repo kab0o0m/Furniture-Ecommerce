@@ -289,7 +289,12 @@
     grid-template-columns: repeat(2, 1fr)
   }
 
-  .new-arrivals-display .card-icons-2 {
+  .new-arrivals-display .card-icons-2
+  {
+    display: none;
+  }
+
+  .checkout-popup {
     display: none;
   }
 }
