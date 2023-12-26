@@ -34,6 +34,7 @@ nav div {
   display: flex;
   gap: 1rem;
 }
+
 nav div button {
   border: none;
   background-color: #FFFFFF;
@@ -45,6 +46,7 @@ nav div button {
 nav div button i {
   color: #313131;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .menu-bar {
@@ -53,6 +55,7 @@ nav div button i {
 
 .shopping-cart-icon {
   position: relative;
+  cursor: pointer;
 }
 
 .cart-count {
@@ -125,7 +128,7 @@ nav div button i {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 15rem;
+  width: 17rem;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   z-index: 999;
   border-radius: 1rem;
@@ -161,6 +164,12 @@ nav div button i {
   align-items: center;
 }
 
+.nav-cart-display-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-cart-display-quantity {
   display: flex;
   align-items: center;
@@ -174,6 +183,7 @@ nav div button i {
   border: none;
   margin-bottom: 1rem;
   border-radius: 0.3rem;
+  cursor: pointer;
 }
 
 .nav-cart-button:hover {

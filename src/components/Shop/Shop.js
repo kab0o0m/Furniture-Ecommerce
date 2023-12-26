@@ -18,6 +18,7 @@ const Shop = () => {
   const [isAddToCartPopup, setIsAddToCartPopup] = useState(false);
   const [isEyePopup, setIsEyePopup] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [itemQuantity, setItemQuantity] = useState(1);
 
   const itemsPerPage = 6;
   const totalPages = Math.ceil(IMAGES.length / itemsPerPage);
@@ -45,6 +46,7 @@ const Shop = () => {
     // Return the sorted array
     return sortedItems;
   };
+
   const filteredItems = sortItems().slice(startIndex, endIndex);
   const { cartCount, setCartCount, cartList, setCartList } =
     useContext(UserContext);
@@ -58,6 +60,7 @@ const Shop = () => {
 
   const closeEyePopup = () => {
     setIsEyePopup(false);
+    setItemQuantity(1);
   };
 
   const addToCartPopup = () => {
@@ -66,6 +69,14 @@ const Shop = () => {
     const timeoutID = setTimeout(() => {
       setIsAddToCartPopup(false);
     }, 2000);
+  };
+
+  const handleIncreaseQuantity = () => {
+    setItemQuantity((prev) => prev + 1);
+  };
+
+  const handleDecreaseQuantity = () => {
+    setItemQuantity((prev) => prev + 1);
   };
 
   const addToShoppingCart = (item) => {
@@ -78,10 +89,10 @@ const Shop = () => {
 
       if (existingItem) {
         // Item already in the cart, update its quantity
-        existingItem.quantity += 1;
+        existingItem.quantity += itemQuantity;
       } else {
         // Item not in the cart, add it with quantity 1
-        const newItem = { ...item, quantity: 1 };
+        const newItem = { ...item, quantity: itemQuantity };
         updatedCheckoutList.push(newItem);
       }
       // Update the cart count based on the total number of items in the cart
@@ -166,7 +177,7 @@ const Shop = () => {
         <Link href="/Furniture-Ecommerce-Website/">Home</Link>
         <div>/</div>
         <div className="shop-header-page">
-          <p>Products</p>
+          <p>Shop</p>
         </div>
       </div>
 
@@ -284,18 +295,34 @@ const Shop = () => {
             <div className="popup-description">
               <p>{selectedItem.description}</p>
             </div>
-
-            <div className="checkout-add-button">
-              <button
-                className="add-button"
-                onClick={() => addToShoppingCart(selectedItem)}
-              >
-                Add to cart
+            <div className="popup-add-to-cart">
+              <div className="checkout-add-button">
+                <button
+                  className="add-button"
+                  onClick={() => addToShoppingCart(selectedItem)}
+                >
+                  Add to cart
+                </button>
+              </div>
+              <button className="close-button" onClick={closeEyePopup}>
+                <i className="fa-solid fa-xmark"></i>
               </button>
+              <div className="quantity-control">
+                <button
+                  className="decrease-button"
+                  onClick={handleDecreaseQuantity}
+                >
+                  -
+                </button>
+                <span>{itemQuantity}</span>
+                <button
+                  className="increase-button"
+                  onClick={handleIncreaseQuantity}
+                >
+                  +
+                </button>
+              </div>
             </div>
-            <button className="close-button" onClick={closeEyePopup}>
-              <i className="fa-solid fa-xmark"></i>
-            </button>
           </div>
         </motion.div>
       )}

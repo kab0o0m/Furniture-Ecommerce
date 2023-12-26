@@ -10,10 +10,9 @@ const Footer = () => {
           Furvo
         </Link>
         <p>
-          Whether you're looking to furnish your entire home or just add a few
-          new pieces, we have something for everyone. Our collection includes a
-          wide range of styles, from modern and contemporary to traditional and
-          rustic.
+          Connect with us on Facebook, Twitter and Instagram! Get your daily
+          dose of style inspiration, exclusive offers, and behind-the-scenes
+          fun. We can't wait to see you there!
         </p>
         <div className="footer-icons">
           <Link to="/Furniture-Ecommerce-Website/">

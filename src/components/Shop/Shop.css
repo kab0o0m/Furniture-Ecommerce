@@ -220,6 +220,26 @@
   cursor: pointer;
 }
 
+.popup-add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.checkout-add-button {
+  margin: 0 1rem 0 0;
+}
+
+.decrease-button,
+.increase-button {
+  border: none;
+  background-color: #FFFFFF;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+
+
 @keyframes fadeInOut {
   0%, 100% {
     opacity: 0;

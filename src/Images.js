@@ -18,7 +18,7 @@ const IMAGES = [
   {
     id: 3,
     image: "./Images/Product3.webp",
-    title: "Multi-Story Cupboard",
+    title: "Multi-Story Display",
     description:
       "Organize your belongings in style with our Multi-Story Cupboard. This spacious cupboard features multiple shelves and compartments, offering ample storage space. The elegant design and durable build make it a practical and attractive choice for your home. Dimensions: 72'' H x 36'' W x 18'' D.",
     price: "79.90",
