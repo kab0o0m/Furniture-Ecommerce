@@ -6,6 +6,8 @@ Furvo is an elegantly crafted furniture e-commerce website, meticulously develop
 
 https://kab0o0m.github.io/Furniture-Ecommerce-Website/
 
+For optimal viewing: 1280px wide screen
+
 ## Key Features
 
 - **Animation with Motion Library**:
