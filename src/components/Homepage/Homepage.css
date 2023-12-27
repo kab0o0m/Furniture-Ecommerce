@@ -245,6 +245,10 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .homepage-title {
+    margin: 0 0 2rem 0;
+  }
   
 
   .homepage-title-right,
@@ -258,19 +262,31 @@
   .best-sale-left {
     align-items: center;
   }
-
-  .para3 {
-    text-align: center;
-  }
-}
-
-@media (min-width: 400px) and (max-width: 640px) {
   .para1 {
     font-size: 2rem;
   }
 
   .para2 {
     font-size: 3rem;
+  }
+  .para3 {
+    text-align: center;
+  }
+
+
+}
+
+@media (min-width: 400px) and (max-width: 640px) {
+  .para1 {
+    font-size: 2rem;
+    padding: 2rem 0 0 0;
+  }
+
+  .para2 {
+    font-size: 1.5rem;
+  }
+  .para3 {
+    padding: 0 0.5rem 0 0.5rem;
   }
 
 
