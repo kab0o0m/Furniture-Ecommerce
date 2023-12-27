@@ -144,11 +144,11 @@ const Search = () => {
           <div className="search-display">
             {searchResults.map((item) => (
               <div key={item.id} className="card-row">
-                <div>
+                <div className="wishlist-display-img">
                   <img src={item.image} className="card-img" />
                 </div>
-                <p className="card-info-1">{item.title}</p>
-                <p className="card-info-2">SGD {item.price}</p>
+                <div className="card-info-1">{item.title}</div>
+                <div className="card-info-2">SGD {item.price}</div>
                 <div className="card-icons">
                   <div className="card-icons-1">
                     <button
