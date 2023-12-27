@@ -2,6 +2,7 @@
   font-family: Roboto;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .cart-header{
@@ -195,6 +196,16 @@
   .continue-shopping{
     width: 90%;
   }
+  .cart-display-title,
+  .cart-display-price,
+  .cart-display-quantity,
+  .cart-display-total {
+    font-size: 0.6rem;
+  }
 
+  .checkout-right {
+    padding: 0;
+    width: 90%;
+  }
   
 }

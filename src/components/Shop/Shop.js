@@ -174,7 +174,7 @@ const Shop = () => {
     <div className="shop">
       {/* Header */}
       <div className="shop-header">
-        <Link href="/Furniture-Ecommerce-Website/">Home</Link>
+        <Link to="/Furniture-Ecommerce-Website/">Home</Link>
         <div>/</div>
         <div className="shop-header-page">
           <p>Shop</p>

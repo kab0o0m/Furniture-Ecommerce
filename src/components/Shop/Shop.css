@@ -117,7 +117,7 @@
 }
 
 .card-img-small {
-  width:100%;
+  width: 100%;
 }
 
 .card-info-description,
@@ -311,6 +311,8 @@
   {
     display: none;
   }
+
+
 }
 
 
