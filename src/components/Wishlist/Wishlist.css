@@ -36,12 +36,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 70rem;
-  padding: 2rem;
+  width: 80%;
+  padding: 2rem 0 2rem 0;
 }
 
 .wishlist-display-body {
   margin: 0 0 2rem 0;
+}
+
+.wishlist-display-col {
+  display: flex;
+  width: 100%;
+  align-items: center;
 }
 
 .wishlist-display-img,
@@ -54,7 +60,7 @@
 .wishlist-display-price-header,
 .wishlist-display-discount-header,
 .wishlist-display-remove-header
- {
+{
   width: 10rem;
   display: flex;
   justify-content: center;
@@ -71,4 +77,15 @@
   background-color: #FFFFFF;
   border: none;
   cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  .wishlist-display-title,
+  .wishlist-display-price,
+  .wishlist-display-discount,
+  .wishlist-display-remove
+   {
+    text-align: center;
+    padding: 0.5rem;
+  }
 }

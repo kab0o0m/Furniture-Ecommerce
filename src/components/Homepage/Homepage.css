@@ -202,6 +202,13 @@
   }
 }
 
+.wishlist-display-col {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .latest-reviews-display {
   display: flex;
   flex-direction: column;
