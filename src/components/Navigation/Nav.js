@@ -29,6 +29,7 @@ function Nav() {
     );
   };
 
+  //Decreases quantity by 1 for specific item
   const handleDecreaseQuantity = (itemId) => {
     const item = cartList.find((item) => item.id === itemId);
     if (item && item.quantity > 1) {
@@ -39,6 +40,7 @@ function Nav() {
     }
   };
 
+  //Increases quantity by 1 for specific item
   const handleIncreaseQuantity = (itemId) => {
     const item = cartList.find((item) => item.id === itemId);
     if (item) {
@@ -46,6 +48,7 @@ function Nav() {
     }
   };
 
+  //Updates cart count everytime cartlist is updated
   useEffect(() => {
     setCartCount(
       getCheckoutList().reduce((total, item) => total + item.quantity, 0)
@@ -53,15 +56,18 @@ function Nav() {
     setCartList(getCheckoutList());
   }, [cartList]);
 
+  // Auto scrolls to the top of the webpage
   const windowScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  //Settings dropdown
   const settingsDropdown = () => {
     setIsSettingsClick(!isSettingsClick);
     setIsCartClick(false);
   };
 
+  //Shopping cart dropdown
   const cartDropdown = () => {
     setIsCartClick(!isCartClick);
     setIsSettingsClick(false);
@@ -85,6 +91,14 @@ function Nav() {
     navigate("/Furniture-Ecommerce-Website/search");
     windowScrollToTop();
   };
+
+  const closeMenu = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+    windowScrollToTop();
+  };
+
   return (
     <nav>
       <Link to="/Furniture-Ecommerce-Website/" className="site-title">
@@ -95,19 +109,29 @@ function Nav() {
         className={`${isOpen ? "#subnavbar active" : "#subnavbar"}`}
       >
         <li>
-          <Link to="/Furniture-Ecommerce-Website/">Home</Link>
+          <Link to="/Furniture-Ecommerce-Website/" onClick={closeMenu}>
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/Furniture-Ecommerce-Website/shop">Shop</Link>
+          <Link to="/Furniture-Ecommerce-Website/shop" onClick={closeMenu}>
+            Shop
+          </Link>
         </li>
         <li>
-          <Link to="/Furniture-Ecommerce-Website/wishlist">Wishlist</Link>
+          <Link to="/Furniture-Ecommerce-Website/wishlist" onClick={closeMenu}>
+            Wishlist
+          </Link>
         </li>
         <li>
-          <Link to="/Furniture-Ecommerce-Website/about">About Us</Link>
+          <Link to="/Furniture-Ecommerce-Website/about" onClick={closeMenu}>
+            About Us
+          </Link>
         </li>
         <li>
-          <Link to="/Furniture-Ecommerce-Website/contact">Contact Us</Link>
+          <Link to="/Furniture-Ecommerce-Website/contact" onClick={closeMenu}>
+            Contact Us
+          </Link>
         </li>
       </ul>
       <div className="menu-right">
