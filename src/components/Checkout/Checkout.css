@@ -143,3 +143,13 @@
   width: 30rem;
 }
 
+@media (max-width: 1000px) {
+  .checkout-body {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .checkout-right {
+    margin: 0 0 2rem 0;
+  }
+}
