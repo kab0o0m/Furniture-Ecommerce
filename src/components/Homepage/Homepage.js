@@ -8,6 +8,7 @@ import { useState, useContext } from "react";
 import { getWishlist, setWishlist } from "../../Wishlist";
 import { UserContext } from "../../App";
 import { getCheckoutList, setCheckoutList } from "../../CheckoutList";
+import { Fade } from "react-awesome-reveal";
 
 const Homepage = () => {
   const [isWishlistPopup, setIsWishlistPopup] = useState(false);
@@ -193,7 +194,10 @@ const Homepage = () => {
         })}
       </div>
       <div className="new-arrivals">
-        <p className="new-arrivals-title">New Arrivals</p>
+        <Fade>
+          <p className="new-arrivals-title">New Arrivals</p>
+        </Fade>
+
         <p className="new-arrivals-description">
           When it comes to furnitures, choices are galore on Furvo
         </p>
@@ -248,13 +252,16 @@ const Homepage = () => {
 
       {/* Best Sale */}
       <div className="best-sale">
-        <div className="best-sale-left">
-          <p className="para1">BEST SALE PRODUCT</p>
-          <p className="para2">Comfort Surround Chair</p>
-          <button className="shop-now-button" onClick={shopNow}>
-            SHOP NOW
-          </button>
-        </div>
+        <Fade>
+          <div className="best-sale-left">
+            <p className="para1">BEST SALE PRODUCT</p>
+            <p className="para2">Comfort Surround Chair</p>
+            <button className="shop-now-button" onClick={shopNow}>
+              SHOP NOW
+            </button>
+          </div>
+        </Fade>
+
         {HomepageImages.filter((item) => item.id === 2).map((item) => {
           return (
             <div key={item.id} className="best-sale-right">
