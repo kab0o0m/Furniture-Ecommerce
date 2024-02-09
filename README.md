@@ -33,3 +33,6 @@ For optimal viewing: 1280px wide screen
 The project incorporates images and layouts for inspiration, sourced from the Monster Template.
 
 Additional Note: The project utilizes a local database to store images, descriptions, and prices. The primary focus is on front-end development and deployment.
+
+<img width="1429" alt="Screenshot 2024-02-09 at 11 09 01 PM" src="https://github.com/kab0o0m/Furniture-Ecommerce-Website/assets/134916365/a0b68e59-0161-44a1-83b0-3b2e0624516c">
+
